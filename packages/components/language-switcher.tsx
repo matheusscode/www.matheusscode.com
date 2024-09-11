@@ -7,7 +7,7 @@ import {
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
-export function LanguageToggle() {
+export function LanguageSwitcher() {
   const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();

@@ -3,10 +3,11 @@ import { geistSans } from "@/styles/fonts";
 import "@/styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import Providers from "../providers";
 
 export const metadata = constructMetadata();
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params: { locale },
 }: Readonly<{
@@ -21,7 +22,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>
