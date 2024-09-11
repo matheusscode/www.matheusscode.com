@@ -28,16 +28,16 @@ export const NewsletterCard = ({
     >
       <CardHeader className="p-4 space-y-4">
         <div className="space-y-1.5">
-          <CardTitle className="text-gray-500">
+          <CardTitle className="text-gray-300 text-[13px]">
             {t("Newsletter.title")}
           </CardTitle>
-          <CardDescription className="text-muted-foreground/70">
+          <CardDescription className="text-muted-foreground/70 text-xs">
             {t("Newsletter.description")}
           </CardDescription>
         </div>
         <div className="flex items-center gap-2.5">
           <Input
-            className="h-8 placeholder:text-sm"
+            className="h-8 placeholder:text-xs"
             placeholder={t("Newsletter.placeholder")}
           />
           <Button size="sm">{t("Newsletter.label")}</Button>

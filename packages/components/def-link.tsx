@@ -1,10 +1,11 @@
+import { Link } from "@/i18n/routing";
 import { cn } from "@/utils/cn";
 import { LucideIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
-import Link, { LinkProps } from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { LinkProps } from "next/link";
 import { HTMLAttributes } from "react";
 
-interface NavLinkParams {
+interface DefLinkParams {
   label: string;
   path: string;
   iconLeft?: LucideIcon;
@@ -13,22 +14,23 @@ interface NavLinkParams {
   id?: number | string;
 }
 
-interface NavLinkProps
+interface DefLinkProps
   extends Omit<LinkProps, "href">,
     HTMLAttributes<HTMLAnchorElement> {
   isActive?: boolean;
-  params: NavLinkParams;
+  params: DefLinkParams;
   isCount?: boolean;
   disabled?: boolean;
 }
 
-export const NavLink = ({
+export const DefLink = ({
   isActive,
   isCount = false,
   params,
   disabled,
   ...props
-}: NavLinkProps) => {
+}: DefLinkProps) => {
+  const locale = useLocale();
   const {
     iconLeft: IconLeft,
     iconRight: IconRight,
@@ -43,6 +45,7 @@ export const NavLink = ({
   return (
     <Link
       {...props}
+      locale={locale}
       href={path}
       data-active={isActive}
       data-disabled={paramDisable || disabled}

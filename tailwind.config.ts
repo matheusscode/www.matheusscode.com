@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        mobile: "574px",
+        tablet: "640px",
+        laptop: "1024px",
+        desktop: "1280px",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

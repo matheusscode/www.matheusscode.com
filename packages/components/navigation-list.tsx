@@ -1,25 +1,25 @@
 "use client";
 
-import { NavLink } from "@/components/nav-link";
 import { usePathname } from "@/i18n/routing";
+import { DefLink } from "@/packages/components/def-link";
 import { NavigateLink } from "@/registry/registry-navigation-routes";
 import { cn } from "@/utils/cn";
 import { HTMLAttributes } from "react";
 import { Dot } from "./ui/dot";
 
-interface NavListProps extends HTMLAttributes<HTMLDivElement> {
+interface NavigationListProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   hasCount?: boolean;
   links: NavigateLink[];
 }
 
-export const NavList = ({
+export const NavigationList = ({
   title,
   className,
   hasCount = false,
   links = [],
   ...props
-}: NavListProps) => {
+}: NavigationListProps) => {
   const pathname = usePathname();
 
   return (
@@ -33,7 +33,7 @@ export const NavList = ({
       <ul className="flex flex-col gap-1">
         {links.map((link) => (
           <li key={link.id} className="block">
-            <NavLink
+            <DefLink
               isCount={hasCount}
               params={link}
               isActive={pathname.endsWith(link.path)}

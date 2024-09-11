@@ -18,10 +18,13 @@ import {
 } from "@/registry/registry-navigation-routes";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { ButtonHTMLAttributes, useEffect, useState } from "react";
+import { cn } from "../utils/cn";
 import { ThemeSwitcher } from "./theme-switcher";
 
-export function NavControls() {
+interface QuickExplorerProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
   const t = useTranslations("MainNav");
   const [open, setOpen] = useState(false);
 
@@ -50,10 +53,14 @@ export function NavControls() {
 
   return (
     <>
-      <div className="flex w-full items-center gap-2">
+      <div className="flex w-full max-laptop:hidden items-center gap-2">
         <Button
+          {...props}
           onClick={() => setOpen(true)}
-          className="justify-between font-normal bg-transparent px-2 h-8 w-full text-muted-foreground/90"
+          className={cn(
+            "justify-between font-normal bg-transparent px-2 h-8 w-full text-muted-foreground/90",
+            className,
+          )}
           size="lg"
           variant="outline"
         >
@@ -67,7 +74,7 @@ export function NavControls() {
             </kbd>
           </div>
         </Button>
-        <ThemeSwitcher />
+        <ThemeSwitcher className="min-w-8 h-8" />
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
@@ -84,4 +91,4 @@ export function NavControls() {
       </CommandDialog>
     </>
   );
-}
+};
