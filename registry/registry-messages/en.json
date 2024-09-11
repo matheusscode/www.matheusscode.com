@@ -1,5 +1,22 @@
 {
-  "HomePage": {
-    "title": "Hello World!"
+  "MainNav": {
+    "NavLinks": {
+      "home": "Home",
+      "journey": "Journey",
+      "stack": "Stack",
+      "projects": "Projects",
+      "workspaces": "Workspaces",
+      "instagram": "Instagram",
+      "linkedin": "Linkedin",
+      "github": "Github",
+      "youtube": "Youtube",
+      "threads": "Threads"
+    },
+    "Newsletter": {
+      "title": "Do you want to receive my articles and posts by email?",
+      "description": "Enter your email below.",
+      "placeholder": "Enter your email",
+      "label": "Send"
+    }
   }
 }

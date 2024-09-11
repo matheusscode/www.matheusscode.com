@@ -9,9 +9,9 @@ export function ThemeSwitcher() {
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
-      className="rounded-full"
+      className="bg-transparent min-w-8 h-8 text-muted-foreground/90"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />

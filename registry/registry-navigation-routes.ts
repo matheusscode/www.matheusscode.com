@@ -22,7 +22,7 @@ export type NavigateLink = {
   iconRight?: LucideIcon;
 };
 
-export const NAV_LINKS: NavigateLink[] = [
+export const registry_nav_links: NavigateLink[] = [
   {
     id: 1,
     path: "/",
@@ -50,7 +50,7 @@ export const NAV_LINKS: NavigateLink[] = [
   {
     id: 4,
     path: "/projects",
-    label: "Projects (Coming soon...)",
+    label: "Projects",
     disabled: true,
     iconLeft: SquareKanbanIcon,
   },
@@ -68,7 +68,7 @@ export const NAV_LINKS: NavigateLink[] = [
   // },
 ];
 
-export const SOCIAL_LINKS: NavigateLink[] = [
+export const registry_social_links: NavigateLink[] = [
   {
     id: 1,
     path: "https://github.com/matheusscode",
