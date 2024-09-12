@@ -5,9 +5,9 @@ import { journey } from "@/registry/registry-journey";
 import { JourneyConnectingLine } from "@/ui/journey/journey-connecting-line";
 import { JourneyPostCard } from "@/ui/journey/journey-post-card";
 import { JourneyTimeLine } from "@/ui/journey/journey-time-line";
+import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
-import { ContentWrapper } from "@/ui/layout/wrapper";
 import { PlusIcon } from "lucide-react";
 
 export default function Page() {

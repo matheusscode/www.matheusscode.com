@@ -1,5 +1,5 @@
+import { ExternalLink } from "@/packages/components/eternal-link";
 import { RegistryTechGroup } from "@/registry/registry-tech-stack";
-import Link from "next/link";
 import { HTMLAttributes } from "react";
 
 interface TechGroupListProps extends HTMLAttributes<HTMLUListElement> {
@@ -8,19 +8,12 @@ interface TechGroupListProps extends HTMLAttributes<HTMLUListElement> {
 
 export const TechGroupList = ({ group }: TechGroupListProps) => {
   return (
-    <ul className="list-none flex pl-8 flex-col gap-2">
+    <ul className="flex list-none flex-col gap-2 pl-8">
       {group.techs.map((tech) => (
-        <li className="text-base list-disc" key={tech.name}>
-          <Link
-            className="hover:underline text-blue-600 dark:text-blue-500"
-            href={tech.path}
-            target="_blank"
-            rel="noreferrer noopener"
-            referrerPolicy="no-referrer"
-            title={`Go to ${tech.name}`}
-          >
+        <li className="list-disc text-base" key={tech.name}>
+          <ExternalLink href={tech.path} title={`Go to ${tech.name}`}>
             {tech.name}
-          </Link>
+          </ExternalLink>
           {" -"} <span>{tech.description}</span>
         </li>
       ))}

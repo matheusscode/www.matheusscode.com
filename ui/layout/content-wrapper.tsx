@@ -1,4 +1,4 @@
-import { cn } from "@/packages/utils/cn";
+import { cn } from "@/utils/cn";
 import { ElementType, HTMLAttributes } from "react";
 
 interface ContentWrapperProps extends HTMLAttributes<HTMLElement> {

@@ -2,9 +2,9 @@ import { RadialPurpleBlueFade } from "@/packages/components/background-radials";
 import { DefImage } from "@/packages/components/def-image";
 import { Separator } from "@/packages/components/ui/separator";
 import setup_print from "@/public/setup/setup-light.jpeg";
+import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
-import { ContentWrapper } from "@/ui/layout/wrapper";
 import { WorkspaceDetailsTable } from "@/ui/workspaces/workspace-details-table";
 
 export default function Page() {

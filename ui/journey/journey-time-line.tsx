@@ -1,4 +1,4 @@
-import { cn } from "@/packages/utils/cn";
+import { cn } from "@/utils/cn";
 import { HTMLAttributes } from "react";
 
 interface JourneyTimeLineProps extends HTMLAttributes<HTMLDivElement> {
@@ -13,7 +13,7 @@ export const JourneyTimeLine = ({
   ...props
 }: JourneyTimeLineProps) => {
   return (
-    <div {...props} className={cn("flex items-center min-w-16", className)}>
+    <div {...props} className={cn("flex min-w-16 items-center", className)}>
       {isLastPost && (
         <>
           <h2>{date}</h2>

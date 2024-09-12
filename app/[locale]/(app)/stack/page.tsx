@@ -4,9 +4,9 @@ import {
   registry_tech_stack,
   RegistryTechGroup,
 } from "@/registry/registry-tech-stack";
+import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
-import { ContentWrapper } from "@/ui/layout/wrapper";
 import { TechGroupList } from "@/ui/stack/tech-group-list";
 
 export default function Page() {

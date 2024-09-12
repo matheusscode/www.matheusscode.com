@@ -1,4 +1,4 @@
-import { cn } from "@/packages/utils/cn";
+import { cn } from "@/utils/cn";
 import { HTMLAttributes } from "react";
 
 export type JourneyDataProps = {
@@ -22,15 +22,14 @@ export const JourneyPostCard = ({
     <div {...props} className={cn("word-break-word flex flex-col", className)}>
       <span className="font-semibold tracking-tighter">{content.title}</span>
       {content.description && (
-        <p className="text-sm mb-2">{content.description}</p>
+        <p className="mb-2 text-sm">{content.description}</p>
       )}
-
       {content.picture && (
-        <div className="mt-2.5 max-w-[596px] w-full  overflow-hidden rounded-xl">
+        <div className="mt-2.5 w-full max-w-[596px] overflow-hidden rounded-xl">
           <img
             src={content.picture}
             alt={content.title || content.description}
-            className="w-full h-[720px] object-cover"
+            className="h-[720px] w-full object-cover"
           />
         </div>
       )}

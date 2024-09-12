@@ -1,11 +1,11 @@
 import { DefImage } from "@/packages/components/def-image";
+import { ExternalLink } from "@/packages/components/eternal-link";
 import { Separator } from "@/packages/components/ui/separator";
+import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import { MainTitle } from "@/ui/layout/title";
-import { ContentWrapper } from "@/ui/layout/wrapper";
 import { EmploymentDetailsTable } from "@/ui/welcome/employment-details-table";
-import Link from "next/link";
 
 export default function Page() {
   return (
@@ -24,12 +24,10 @@ export default function Page() {
             Foundation, which lives in the city of Manaus - Amazonas, Brazil.
           </p>
         </div>
-        <Link
-          target="_blank"
+        <ExternalLink
+          icon={false}
           title="Open project in Github"
           href="https://github.com/matheusscode/www.matheusscode.com"
-          rel="noreferrer noopener"
-          referrerPolicy="no-referrer"
         >
           <DefImage
             width={900}
@@ -38,7 +36,7 @@ export default function Page() {
             alt="www.matheusscode.com banner"
             className="h-[200px] w-full cursor-pointer rounded-xl object-cover opacity-90 hover:opacity-100"
           />
-        </Link>
+        </ExternalLink>
         <div className="mt-8 flex flex-col gap-4">
           <MainTitle title="Previous work." />
           <EmploymentDetailsTable />

@@ -1,7 +1,7 @@
-import { cn } from "@/packages/utils/cn";
 import { constructMetadata } from "@/packages/utils/construct-metadata";
 import { geistSans } from "@/styles/fonts";
 import "@/styles/globals.css";
+import { cn } from "@/utils/cn";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";

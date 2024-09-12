@@ -10,8 +10,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/packages/components/ui/table";
-import { cn } from "@/packages/utils/cn";
 import { registry_workspace } from "@/registry/registry-workspace";
+import { cn } from "@/utils/cn";
 import { useState } from "react";
 
 export const WorkspaceDetailsTable = () => {

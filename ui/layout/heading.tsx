@@ -1,6 +1,6 @@
 import Balancer, { BalancerOwnProps } from "react-wrap-balancer";
 
-import { cn } from "@/packages/utils/cn";
+import { cn } from "@/utils/cn";
 import { HTMLAttributes } from "react";
 
 export interface HeadingProps

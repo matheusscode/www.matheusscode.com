@@ -1,8 +1,8 @@
 import { ExternalLink } from "@/packages/components/eternal-link";
 import { registry_curriculum } from "@/registry/registry-curriculum";
+import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
-import { ContentWrapper } from "@/ui/layout/wrapper";
 
 export default function Page() {
   return (
