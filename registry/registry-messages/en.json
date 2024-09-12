@@ -1,4 +1,10 @@
 {
+  "Welcome" : "",
+  "Journey" : "",
+  "Stack" : "",
+  "Workspace" : "",
+  "Curriculum" : "",
+
   "MainNav": {
     "NavLinks": {
       "home": "Home",
