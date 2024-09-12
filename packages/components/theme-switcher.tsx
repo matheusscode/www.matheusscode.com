@@ -2,16 +2,29 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "./ui/button";
+import { cn } from "../utils/cn";
+import { Button, ButtonProps } from "./ui/button";
 
-export function ThemeSwitcher() {
+interface ThemeSwitcherProps extends ButtonProps {}
+
+export function ThemeSwitcher({
+  className,
+  variant = "outline",
+  size = "icon",
+  ...props
+}: ThemeSwitcherProps) {
   const { setTheme, theme } = useTheme();
 
   return (
     <Button
-      variant="ghost"
-      size="icon"
-      className="rounded-full"
+      {...props}
+      variant={variant}
+      size={size}
+      aria-label="theme-switcher"
+      className={cn(
+        "bg-transparent text-foreground dark:text-muted-foreground/90",
+        className,
+      )}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
