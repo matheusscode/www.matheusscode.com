@@ -12,7 +12,7 @@ export const Wrapper = ({ as = "div", className, ...props }: WrapperProps) => {
     <Tag
       {...props}
       className={cn(
-        "max-w-4xl mx-auto max-laptop:max-w-full w-full h-full",
+        "max-w-4xl z-10 mx-auto max-laptop:max-w-full w-full h-full",
         className,
       )}
     />

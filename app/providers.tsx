@@ -14,7 +14,7 @@ export default async function Providers({
       enableSystem
       disableTransitionOnChange
     >
-      <TooltipProvider>{children}</TooltipProvider>
+      <TooltipProvider delayDuration={50}>{children}</TooltipProvider>
     </ThemeProvider>
   );
 }
