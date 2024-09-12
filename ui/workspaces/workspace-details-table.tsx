@@ -36,7 +36,7 @@ export const WorkspaceDetailsTable = () => {
               onMouseEnter={() => setHovered(product.id)}
               onMouseLeave={() => setHovered(null)}
               className={cn(
-                "transition-all text-primary font-normal select-none cursor-pointer duration-300 ease-in-out",
+                "cursor-pointer select-none font-normal text-primary transition-all duration-300 ease-in-out",
                 {
                   "blur-sm": isNotHovered,
                 },
@@ -48,6 +48,7 @@ export const WorkspaceDetailsTable = () => {
               <TableCell className="px-4 py-3">{product.spec}</TableCell>
               <TableCell className="px-4 py-3 font-medium">
                 <ExternalLink
+                  icon={false}
                   href={product.buy_path}
                   title={`Go to ${product.buy_path}`}
                 >

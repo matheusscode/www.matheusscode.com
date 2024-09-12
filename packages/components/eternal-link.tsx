@@ -1,14 +1,19 @@
 import { cn } from "@/utils/cn";
+import { ExternalLinkIcon } from "lucide-react";
 import Link, { type LinkProps } from "next/link";
 import { HTMLAttributes } from "react";
 
 interface ExternalLinkProps
   extends LinkProps,
-    HTMLAttributes<HTMLAnchorElement> {}
+    HTMLAttributes<HTMLAnchorElement> {
+  icon?: boolean;
+}
 
 export const ExternalLink = ({
   className,
   href,
+  children,
+  icon = true,
   ...props
 }: ExternalLinkProps) => {
   return (
@@ -19,9 +24,12 @@ export const ExternalLink = ({
       rel="noreferrer noopener"
       referrerPolicy="no-referrer"
       className={cn(
-        "text-blue-500 darK:text-blue-600 break-words after:content-['_↗']",
+        "inline-flex w-auto items-center gap-0.5 break-words text-blue-600 hover:underline dark:text-blue-500",
         className,
       )}
-    />
+    >
+      {children}
+      {icon && <ExternalLinkIcon size={17} />}
+    </Link>
   );
 };

@@ -1,24 +1,15 @@
 import { Link } from "@/i18n/routing";
+import { NavigateLink } from "@/registry/registry-navigation-routes";
 import { cn } from "@/utils/cn";
-import { LucideIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { LinkProps } from "next/link";
 import { HTMLAttributes } from "react";
-
-interface DefLinkParams {
-  label: string;
-  path: string;
-  iconLeft?: LucideIcon;
-  iconRight?: LucideIcon;
-  disabled?: boolean;
-  id?: number | string;
-}
 
 interface DefLinkProps
   extends Omit<LinkProps, "href">,
     HTMLAttributes<HTMLAnchorElement> {
   isActive?: boolean;
-  params: DefLinkParams;
+  params: NavigateLink;
   isCount?: boolean;
   disabled?: boolean;
 }
@@ -38,6 +29,7 @@ export const DefLink = ({
     path,
     id,
     disabled: paramDisable,
+    target,
   } = params;
 
   const t = useTranslations("MainNav");
@@ -54,7 +46,7 @@ export const DefLink = ({
         data-active={isActive}
         data-disabled={paramDisable || disabled}
         prefetch={false}
-        target={isCount ? "" : "_blank"}
+        target={target}
         rel="noreferrer noopener"
         referrerPolicy="no-referrer"
         className="transition-all group text-gray-500 dark:text-gray-400 hover:text-zinc-800 dark:hover:text-zinc-200 flex items-center select-none justify-between rounded-lg p-1.5 h-9 px-2 data-[active=true]:bg-black data-[active=true]:dark:bg-zinc-900/85 data-[active=true]:text-white hover:bg-gray-200 hover:dark:bg-zinc-800/30 data-[disabled=true]:pointer-events-none data-[disabled=true]:bg-gray-200 data-[disabled=true]:dark:bg-zinc-950 data-[disabled=true]:text-gray-700 data-[disabled=true]:opacity-85"

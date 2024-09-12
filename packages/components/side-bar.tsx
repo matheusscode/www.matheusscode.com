@@ -1,5 +1,8 @@
+"use client";
+
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/utils/cn";
+import { usePathname } from "next/navigation";
 import { HTMLAttributes } from "react";
 import { NewsletterCard } from "./newsletter-card";
 
@@ -14,11 +17,14 @@ export const SideBar = ({
   isInner = false,
   ...props
 }: SideBarProps) => {
+  const pathname = usePathname();
+
   return (
     <ScrollArea
       className={cn(
         "sticky w-[335px] top-0 z-10 px-2.5 py-3 h-screen max-laptop:hidden flex flex-col bg-zinc-50 border-r border-gray-200 dark:border-gray-700/20 dark:bg-zinc-900/20",
         isInner && "w-72",
+        pathname.endsWith("curriculum") && "hidden",
       )}
     >
       <aside {...props} className={cn("h-full", className)}>

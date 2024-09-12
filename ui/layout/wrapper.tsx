@@ -16,7 +16,7 @@ export const ContentWrapper = ({
     <Tag
       {...props}
       className={cn(
-        "max-w-4xl z-10 mx-auto max-laptop:max-w-full w-full h-full",
+        "z-10 mx-auto h-full w-full max-w-4xl whitespace-break-spaces max-laptop:max-w-full",
         className,
       )}
     />

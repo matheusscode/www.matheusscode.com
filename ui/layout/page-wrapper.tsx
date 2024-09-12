@@ -11,7 +11,7 @@ export const PageWrapper = ({
   return (
     <main
       className={cn(
-        "flex flex-col justify-center  pt-24 max-laptop:pt-10 max-laptop:px-4 px-8 pb-16",
+        "flex flex-col justify-center px-8 pb-16 pt-24 max-laptop:px-4 max-laptop:pt-10",
         className,
       )}
     >
