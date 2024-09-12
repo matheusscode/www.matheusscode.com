@@ -1,25 +1,31 @@
-export type Job = (typeof jobs)[0];
+export type RegistryJob = (typeof registry_jobs)[0];
 
-export const jobs = [
+export const registry_jobs_columns: string[] = [
+  "Company",
+  "Office",
+  "Beginning and end",
+] as const;
+
+export const registry_jobs = [
   {
     id: 1,
     company: "Ream",
-    office: "SR Software Engineer",
-    beginning_and_end: "Actual",
+    office: "JR Software Engineer",
+    beginning_and_end: "01/24 - Actual",
     route: "https://ream.com.br/",
   },
   {
     id: 2,
     company: "H.A.M",
-    office: "PL Fullstack Developer",
-    beginning_and_end: "17/04/23 à 23/07/2024",
+    office: "JR Fullstack Developer",
+    beginning_and_end: "04/23 - 07/2024",
     route: "https://ham.org.br/",
   },
   {
     id: 3,
     company: "Trixx",
-    office: "JR Frontend Developer",
-    beginning_and_end: "17/04/23 à 23/07/2024",
+    office: "TR Frontend Developer",
+    beginning_and_end: "04/23 - 07/2024",
     route: "https://www.trixxtem.com.br/",
   },
 ];

@@ -53,6 +53,7 @@ export const DefLink = ({
         href={path}
         data-active={isActive}
         data-disabled={paramDisable || disabled}
+        prefetch={false}
         target={isCount ? "" : "_blank"}
         rel="noreferrer noopener"
         referrerPolicy="no-referrer"

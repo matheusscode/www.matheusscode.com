@@ -8,5 +8,13 @@ interface WrapperProps extends HTMLAttributes<HTMLElement> {
 export const Wrapper = ({ as = "div", className, ...props }: WrapperProps) => {
   const Tag: ElementType = as;
 
-  return <Tag {...props} className={cn("w-full h-full", className)} />;
+  return (
+    <Tag
+      {...props}
+      className={cn(
+        "max-w-4xl mx-auto max-laptop:max-w-full w-full h-full",
+        className,
+      )}
+    />
+  );
 };
