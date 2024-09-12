@@ -1,17 +1,17 @@
 import { cva, VariantProps } from "class-variance-authority";
 import React, { ElementType, HTMLAttributes } from "react";
 
-const typographyVariants = cva("tracking-tight font-sans text-primary/95", {
+const typographyVariants = cva("font-sans text-primary/95", {
   variants: {
     as: {
-      h1: "text-6xl font-bold",
-      h2: "text-5xl font-bold",
-      h3: "text-4xl font-bold",
-      h4: "text-3xl font-bold",
-      h5: "text-2xl font-medium",
-      h6: "text-xl font-medium",
-      p: "text-sm font-normal",
-      span: "text-xs  font-normal",
+      h1: "text-6xl font-bold tracking-tight",
+      h2: "text-5xl font-bold tracking-tight",
+      h3: "text-4xl font-bold tracking-tight",
+      h4: "text-3xl font-bold tracking-tight",
+      h5: "text-2xl font-medium tracking-tight",
+      h6: "text-xl font-medium tracking-tight",
+      p: "text-sm font-normal tracking-tight",
+      span: "",
     },
   },
   defaultVariants: {

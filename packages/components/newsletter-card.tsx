@@ -28,7 +28,7 @@ export const NewsletterCard = ({
     >
       <CardHeader className="p-4 space-y-4">
         <div className="space-y-1.5">
-          <CardTitle className="text-gray-300 text-[13px]">
+          <CardTitle className="text-gray-500 !leading-normal text-[13px]">
             {t("Newsletter.title")}
           </CardTitle>
           <CardDescription className="text-muted-foreground/70 text-xs">

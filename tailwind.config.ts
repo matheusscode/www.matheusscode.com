@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   darkMode: ["class"],
@@ -14,6 +15,9 @@ const config: Config = {
         tablet: "640px",
         laptop: "1024px",
         desktop: "1280px",
+      },
+      lineHeight: {
+        slacker: "1.75",
       },
       colors: {
         background: "hsl(var(--background))",
@@ -62,8 +66,15 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", ...defaultTheme.fontFamily.sans],
+        mono: ["var(--font-geist-mono)", ...defaultTheme.fontFamily.mono],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };
 export default config;

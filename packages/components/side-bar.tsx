@@ -17,8 +17,8 @@ export const SideBar = ({
   return (
     <ScrollArea
       className={cn(
-        "sticky w-96 top-0 z-10 px-2.5 py-3 h-screen max-laptop:hidden flex flex-col bg-zinc-50 border-r border-gray-200 dark:border-gray-700/20 dark:bg-zinc-900/20",
-        isInner && "w-80",
+        "sticky w-[335px] top-0 z-10 px-2.5 py-3 h-screen max-laptop:hidden flex flex-col bg-zinc-50 border-r border-gray-200 dark:border-gray-700/20 dark:bg-zinc-900/20",
+        isInner && "w-72",
       )}
     >
       <aside {...props} className={cn("h-full", className)}>
