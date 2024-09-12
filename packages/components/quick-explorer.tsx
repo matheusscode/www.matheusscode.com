@@ -56,9 +56,10 @@ export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
       <div className="flex w-full max-laptop:hidden items-center gap-2">
         <Button
           {...props}
+          aria-label="command-explorer"
           onClick={() => setOpen(true)}
           className={cn(
-            "justify-between font-normal bg-transparent px-2 h-8 w-full text-muted-foreground/90",
+            "justify-between font-normal bg-transparent px-2 h-8 w-full text-foreground dark:text-muted-foreground/90",
             className,
           )}
           size="lg"

@@ -25,7 +25,7 @@ export const NavigationList = ({
   return (
     <nav {...props} className={cn("flex flex-col gap-1", className)}>
       {title && (
-        <h1 className="flex items-center gap-1.5 text-[0.82rem] font-semibold p-2 text-gray-500">
+        <h1 className="flex items-center gap-1.5 text-[0.82rem] font-semibold p-2 text-gray-500 dark:text-gray-400/75">
           <Dot />
           {title}
         </h1>

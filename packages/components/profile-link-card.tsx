@@ -1,8 +1,8 @@
-import { Avatar, AvatarImage } from "@/components//ui/avatar";
 import { Link } from "@/i18n/routing";
 import { registry_myself } from "@/registry/registry-myself";
 import { cn } from "@/utils/cn";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 import { LinkProps } from "next/link";
 import { HTMLAttributes } from "react";
 
@@ -31,14 +31,20 @@ export const ProfileLinkCard = ({
         className,
       )}
     >
-      <Avatar>
-        <AvatarImage src={registry_myself.avatar} alt="devmatolo" />
-      </Avatar>
+      <Image
+        src={registry_myself.avatar}
+        alt="devmatolo"
+        priority
+        quality={100}
+        width={44}
+        height={44}
+        className="rounded-full"
+      />
       <div className="flex flex-col ">
         <h1 className="font-semibold tracking-tight text-sm">
           {registry_myself.name}
         </h1>
-        <span className="text-gray-600 text-left text-xs">
+        <span className="text-gray-600 dark:text-gray-400 text-left text-xs">
           {registry_myself.office}
         </span>
       </div>

@@ -20,7 +20,11 @@ export function ThemeSwitcher({
       {...props}
       variant={variant}
       size={size}
-      className={cn("bg-transparent text-muted-foreground/90", className)}
+      aria-label="theme-switcher"
+      className={cn(
+        "bg-transparent text-foreground dark:text-muted-foreground/90",
+        className,
+      )}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
