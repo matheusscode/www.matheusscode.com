@@ -1,6 +1,6 @@
-export type Workspace = (typeof workspace)[0];
+export type RegistryWorkspace = (typeof registry_workspace)[0];
 
-export const workspace = [
+export const registry_workspace = [
   {
     id: 1,
     product: "AOC LEGEND 27 Gamer Monitor 240hz",
