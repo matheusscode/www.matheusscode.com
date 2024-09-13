@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
-import Providers from "../providers";
+import Providers from "./providers";
 
 export const metadata = constructMetadata();
 
