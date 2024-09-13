@@ -7,6 +7,7 @@ import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 interface Props {
   params: {
@@ -24,6 +25,7 @@ export const metadata = constructMetadata({
 });
 
 export default function Page({ params: { locale } }: Props) {
+  unstable_setRequestLocale(locale);
   let content;
 
   if (locale === "en") {

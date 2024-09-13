@@ -10,7 +10,13 @@ import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { TechGroupList } from "@/ui/stack/tech-group-list";
-import { useTranslations } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
+interface Props {
+  params: {
+    locale: string;
+  };
+}
 
 export const metadata = constructMetadata({
   title: "Technologies I Work With - My Tech Stack",
@@ -20,8 +26,9 @@ export const metadata = constructMetadata({
   canonicalUrl: "/stack",
 });
 
-export default function Page() {
-  const t = useTranslations("stack");
+export default async function Page({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: "stack" });
+  unstable_setRequestLocale(locale);
 
   return (
     <PageWrapper>

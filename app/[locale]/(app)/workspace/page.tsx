@@ -8,7 +8,13 @@ import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { WorkspaceDetailsTable } from "@/ui/workspaces/workspace-details-table";
-import { useTranslations } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
+interface Props {
+  params: {
+    locale: string;
+  };
+}
 
 export const metadata = constructMetadata({
   title: "Introducing My Workspace - An Enhanced Project Management Hub",
@@ -19,8 +25,9 @@ export const metadata = constructMetadata({
   canonicalUrl: "/workspace",
 });
 
-export default function Page() {
-  const t = useTranslations("workspace");
+export default async function Page({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: "workspace" });
+  unstable_setRequestLocale(locale);
 
   return (
     <PageWrapper>

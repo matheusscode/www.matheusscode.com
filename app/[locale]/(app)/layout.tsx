@@ -5,14 +5,21 @@ import { ProfileLinkCard } from "@/packages/components/profile-link-card";
 import { SideBar } from "@/packages/components/side-bar";
 import { constructMetadata } from "@/packages/utils/construct-metadata";
 import Transmutation from "@/ui/layout/transmutation-content";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export const metadata = constructMetadata();
 
 export default async function LocaleLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: {
+    locale: string;
+  };
 }>) {
+  unstable_setRequestLocale(locale);
+
   return (
     <div className="h-screen w-full overflow-hidden laptop:flex">
       <SideBar className="sticky top-0 flex-none">

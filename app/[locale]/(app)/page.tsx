@@ -8,7 +8,13 @@ import { PageWrapper } from "@/ui/layout/page-wrapper";
 import { MainTitle } from "@/ui/layout/title";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { EmploymentDetailsTable } from "@/ui/welcome/employment-details-table";
-import { useTranslations } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
+interface Props {
+  params: {
+    locale: string;
+  };
+}
 
 export const metadata = constructMetadata({
   title: "Welcome to My Porfolio - Showcasing My Work and Achievements",
@@ -19,8 +25,9 @@ export const metadata = constructMetadata({
   canonicalUrl: "/home",
 });
 
-export default function Page() {
-  const t = useTranslations("welcome");
+export default async function Page({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: "welcome" });
+  unstable_setRequestLocale(locale);
 
   return (
     <PageWrapper>

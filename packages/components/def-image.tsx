@@ -3,12 +3,13 @@ import { cn } from "@/utils/cn";
 import Image, { ImageProps } from "next/image";
 import { HTMLAttributes } from "react";
 
-interface DefImageProps extends ImageProps, HTMLAttributes<HTMLImageElement> {}
+interface DefImageProps
+  extends ImageProps,
+    Omit<HTMLAttributes<HTMLImageElement>, "objectFit"> {}
 
 export const DefImage = ({
   className,
   width = 100,
-  objectFit = "cover",
   height = 100,
   ...props
 }: DefImageProps) => {
@@ -26,7 +27,6 @@ export const DefImage = ({
         height={height}
         className={cn("mx-auto rounded-xl shadow-md transition-all", className)}
         priority
-        objectFit={objectFit}
         quality={100}
       />
     </Transmutation>

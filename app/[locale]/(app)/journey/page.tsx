@@ -10,10 +10,18 @@ import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { PlusIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-export default function Page() {
-  const t = useTranslations("journey");
+interface Props {
+  params: {
+    locale: string;
+  };
+}
+
+export default async function Page({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: "journey" });
+
+  unstable_setRequestLocale(locale);
 
   return (
     <PageWrapper>
