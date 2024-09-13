@@ -16,31 +16,31 @@ export const NewsletterCard = ({
   className,
   ...props
 }: NewsletterCardProps) => {
-  const t = useTranslations("MainNav");
+  const t = useTranslations("newsletter");
 
   return (
     <Card
       {...props}
       className={cn(
-        "transition-all bg-background shadow-none hover:shadow-md",
+        "bg-background shadow-none transition-all hover:shadow-md",
         className,
       )}
     >
-      <CardHeader className="p-4 space-y-4">
+      <CardHeader className="space-y-4 p-4">
         <div className="space-y-1.5">
-          <CardTitle className="text-gray-700 dark:text-gray-300 !leading-normal text-[13px]">
-            {t("Newsletter.title")}
+          <CardTitle className="text-[13px] !leading-normal text-gray-700 dark:text-gray-300">
+            {t("title")}
           </CardTitle>
-          <CardDescription className="text-muted-foreground dark:text-muted-foreground text-xs">
-            {t("Newsletter.description")}
+          <CardDescription className="text-xs text-muted-foreground dark:text-muted-foreground">
+            {t("description")}
           </CardDescription>
         </div>
         <div className="flex items-center gap-2.5">
           <Input
             className="h-8 placeholder:text-xs"
-            placeholder={t("Newsletter.placeholder")}
+            placeholder={t("placeholder")}
           />
-          <Button size="sm">{t("Newsletter.label")}</Button>
+          <Button size="sm">{t("label")}</Button>
         </div>
       </CardHeader>
     </Card>
