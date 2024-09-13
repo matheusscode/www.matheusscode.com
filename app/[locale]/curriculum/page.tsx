@@ -1,5 +1,6 @@
 import { ExternalLink } from "@/packages/components/eternal-link";
 import { LanguageSwitcher } from "@/packages/components/language-switcher";
+import { constructMetadata } from "@/packages/utils/construct-metadata";
 import enCv from "@/registry/registry-curriculum/registry-curriculum-en.json";
 import ptCv from "@/registry/registry-curriculum/registry-curriculum-pt.json";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
@@ -12,6 +13,15 @@ interface Props {
     locale: string;
   };
 }
+
+export const metadata = constructMetadata({
+  title: "My Curriculum - Detailed Overview of My Professional Journey",
+  description:
+    "Explore my detailed curriculum vitae, showcasing my educational background, professional experiences, and skills. Learn more about my career path and achievements.",
+  image:
+    "https://github.com/user-attachments/assets/4cc1ef02-e07f-471f-9385-cc2854854d84",
+  canonicalUrl: "/curriculum",
+});
 
 export default function Page({ params: { locale } }: Props) {
   let content;

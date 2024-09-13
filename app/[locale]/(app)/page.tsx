@@ -1,6 +1,7 @@
 import { DefImage } from "@/packages/components/def-image";
 import { ExternalLink } from "@/packages/components/eternal-link";
 import { Separator } from "@/packages/components/ui/separator";
+import { constructMetadata } from "@/packages/utils/construct-metadata";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
@@ -8,6 +9,15 @@ import { MainTitle } from "@/ui/layout/title";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { EmploymentDetailsTable } from "@/ui/welcome/employment-details-table";
 import { useTranslations } from "next-intl";
+
+export const metadata = constructMetadata({
+  title: "Welcome to My Porfolio - Showcasing My Work and Achievements",
+  description:
+    "Explore my porfolio to learn more about my work, achievements, and projects. Discover my GitHub repository, view my professional details, and see how I approach my work.",
+  image:
+    "https://github.com/user-attachments/assets/4cc1ef02-e07f-471f-9385-cc2854854d84",
+  canonicalUrl: "/home",
+});
 
 export default function Page() {
   const t = useTranslations("welcome");

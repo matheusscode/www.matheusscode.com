@@ -1,5 +1,6 @@
 import { RadialPurpleBlurCircle } from "@/packages/components/background-radials";
 import { Separator } from "@/packages/components/ui/separator";
+import { constructMetadata } from "@/packages/utils/construct-metadata";
 import {
   registry_tech_stack,
   RegistryTechGroup,
@@ -10,6 +11,14 @@ import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { TechGroupList } from "@/ui/stack/tech-group-list";
 import { useTranslations } from "next-intl";
+
+export const metadata = constructMetadata({
+  title: "Technologies I Work With - My Tech Stack",
+  description:
+    "Explore the technologies and tools I work with and have familiarity with. This page provides an overview of the tech stack that powers my projects and enhances my development workflow.",
+  image: "https://github.com/user-attachments/assets/tech-stack-overview.png",
+  canonicalUrl: "/stack",
+});
 
 export default function Page() {
   const t = useTranslations("stack");
