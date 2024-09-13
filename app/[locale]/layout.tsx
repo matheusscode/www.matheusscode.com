@@ -3,7 +3,6 @@ import { constructMetadata } from "@/packages/utils/construct-metadata";
 import { geistSans } from "@/styles/fonts";
 import "@/styles/globals.css";
 import { cn } from "@/utils/cn";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
@@ -36,7 +35,6 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>
-        <SpeedInsights />
       </body>
     </html>
   );
