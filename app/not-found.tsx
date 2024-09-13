@@ -1,10 +1,14 @@
 "use client";
 
-import "@/styles/globals.css";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function NotFound() {
   const router = useRouter();
 
-  router.push("/");
+  useEffect(() => {
+    router.push("/");
+  }, [router]);
+
+  return null;
 }

@@ -3,7 +3,7 @@ import { geistSans } from "@/styles/fonts";
 import "@/styles/globals.css";
 import { cn } from "@/utils/cn";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
 import Providers from "./providers";
 
@@ -19,6 +19,7 @@ export default async function RootLayout({
   };
 }) {
   const messages = await getMessages();
+  unstable_setRequestLocale("en");
 
   return (
     <html lang={locale} suppressHydrationWarning>
