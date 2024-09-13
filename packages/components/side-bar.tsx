@@ -21,7 +21,7 @@ export const SideBar = ({
   return (
     <ScrollArea
       className={cn(
-        "sticky top-0 z-10 flex h-screen w-[335px] flex-col border-r border-gray-200 bg-zinc-50 px-2.5 py-3 dark:border-gray-700/20 dark:bg-zinc-900/20 max-laptop:hidden",
+        "sticky top-0 z-10 hidden h-screen w-[335px] flex-col border-r border-gray-200 bg-zinc-50 px-2.5 py-3 dark:border-gray-700/20 dark:bg-zinc-900/20 laptop:flex",
         isInner && "w-72",
         pathname.endsWith("curriculum") && "hidden",
       )}

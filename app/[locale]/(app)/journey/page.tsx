@@ -10,15 +10,18 @@ import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { PlusIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
+  const t = useTranslations("journey");
+
   return (
-    <Transmutation>
-      <PageWrapper>
-        <RadialBlueFade />
+    <PageWrapper>
+      <RadialBlueFade />
+      <Transmutation>
         <ContentWrapper className="flex flex-col gap-6">
           <div>
-            <Heading title="Journey" />
+            <Heading title={t("main_title")} />
             <Separator />
           </div>
           <div className="mt-5 flex flex-col items-stretch">
@@ -48,7 +51,7 @@ export default function Page() {
                       className="relative flex last:pb-0"
                     >
                       {isSameYear && <JourneyConnectingLine />}
-                      <div className="z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black align-middle text-white">
+                      <div className="z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary align-middle text-background">
                         <PlusIcon size={16} />
                       </div>
                       <div className="w-full max-w-[650px] flex-grow pb-6 pl-8">
@@ -61,7 +64,7 @@ export default function Page() {
             })}
           </div>
         </ContentWrapper>
-      </PageWrapper>
-    </Transmutation>
+      </Transmutation>
+    </PageWrapper>
   );
 }

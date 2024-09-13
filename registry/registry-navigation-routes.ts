@@ -62,8 +62,8 @@ export const registry_nav_links: NavigateLink[] = [
   },
   {
     id: 5,
-    path: "/workspaces",
-    label: "Workspaces",
+    path: "/workspace",
+    label: "Workspace",
     target: "_self",
     iconLeft: ArmchairIcon,
   },

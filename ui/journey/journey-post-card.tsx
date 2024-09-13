@@ -19,8 +19,13 @@ export const JourneyPostCard = ({
   ...props
 }: JourneyPostCardProps) => {
   return (
-    <div {...props} className={cn("word-break-word flex flex-col", className)}>
-      <span className="font-semibold tracking-tighter">{content.title}</span>
+    <div
+      {...props}
+      className={cn("word-break-word flex flex-col text-pretty", className)}
+    >
+      <h1 className="text-base font-semibold tracking-tighter">
+        {content.title}
+      </h1>
       {content.description && (
         <p className="mb-2 text-sm">{content.description}</p>
       )}

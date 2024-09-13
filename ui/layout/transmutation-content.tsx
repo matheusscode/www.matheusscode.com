@@ -32,7 +32,7 @@ export default function Transmutation({
       initial={initial}
       animate={animate}
       transition={{ ease: "easeIn", duration: time }}
-      className={cn("overflow-hidden", className)}
+      className={cn(className)}
     />
   );
 }

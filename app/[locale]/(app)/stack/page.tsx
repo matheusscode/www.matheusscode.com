@@ -9,29 +9,38 @@ import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { TechGroupList } from "@/ui/stack/tech-group-list";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
+  const t = useTranslations("stack");
+
   return (
-    <Transmutation>
-      <PageWrapper>
-        <RadialPurpleBlurCircle />
+    <PageWrapper>
+      <RadialPurpleBlurCircle />
+      <Transmutation>
         <ContentWrapper className="flex flex-col gap-6">
           <div>
-            <Heading title="Stack" />
+            <Heading title={t("main_title")} />
             <Separator />
           </div>
-          {registry_tech_stack.map((group: RegistryTechGroup, index) => (
-            <nav
-              key={group.id}
-              data-index={index}
-              className="space-y-4 pt-8 data-[index=0]:pt-0"
-            >
-              <h1 className="mb-4 text-lg font-semibold">{group.groupName}</h1>
-              <TechGroupList group={group} />
-            </nav>
-          ))}
+          {registry_tech_stack.map((group: RegistryTechGroup, index) => {
+            const translationKey = `group_${group.key}` as keyof IntlMessages;
+
+            return (
+              <nav
+                key={group.id}
+                data-index={index}
+                className="space-y-4 pt-8 data-[index=0]:pt-0"
+              >
+                <h1 className="mb-4 text-lg font-semibold">
+                  {t(translationKey as never)}
+                </h1>
+                <TechGroupList group={group} />
+              </nav>
+            );
+          })}
         </ContentWrapper>
-      </PageWrapper>
-    </Transmutation>
+      </Transmutation>
+    </PageWrapper>
   );
 }

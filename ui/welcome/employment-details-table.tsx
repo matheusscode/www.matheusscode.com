@@ -15,10 +15,12 @@ import {
   RegistryJob,
 } from "@/registry/registry-jobs";
 import { cn } from "@/utils/cn";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 
 export const EmploymentDetailsTable = () => {
+  const t = useTranslations("welcome");
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -49,9 +51,11 @@ export const EmploymentDetailsTable = () => {
                 },
               )}
             >
-              <TableCell className="px-4 py-3">{job.company}</TableCell>
               <TableCell className="px-4 py-3">
-                {job.beginning_and_end}
+                {t(`${job.key}_table_office` as never)}
+              </TableCell>
+              <TableCell className="px-4 py-3">
+                {t(`${job.key}_table_period` as never)}
               </TableCell>
               <TableCell className="px-4 py-3">{job.office}</TableCell>
               <TableCell className="px-4 py-3">
@@ -66,10 +70,7 @@ export const EmploymentDetailsTable = () => {
           );
         })}
       </TableBody>
-      <TableCaption className="py-3">
-        I worked on them all with all the affection and gratitude in the world.
-        ❤️
-      </TableCaption>
+      <TableCaption className="py-3">{t("congratulations")} ❤️</TableCaption>
     </Table>
   );
 };

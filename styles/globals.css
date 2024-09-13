@@ -112,4 +112,5 @@
   *::-webkit-scrollbar-thumb {
     @apply bg-primary/20 transition-all rounded-full hover:bg-primary;
   }
+
 }

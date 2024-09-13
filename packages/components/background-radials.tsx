@@ -1,5 +1,5 @@
 export const RadialPurpleBlurCircle = () => (
-  <div className="pointer-events-none fixed bottom-auto -z-0 left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] dark:opacity-20 opacity-50 blur-[80px]" />
+  <div className="pointer-events-none fixed bottom-auto left-auto right-0 top-0 -z-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px] dark:opacity-20" />
 );
 
 export const RadialGradientScreen = () => (

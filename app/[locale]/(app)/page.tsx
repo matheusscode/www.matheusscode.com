@@ -7,45 +7,42 @@ import { PageWrapper } from "@/ui/layout/page-wrapper";
 import { MainTitle } from "@/ui/layout/title";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { EmploymentDetailsTable } from "@/ui/welcome/employment-details-table";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
+  const t = useTranslations("welcome");
+
   return (
-    <Transmutation>
-      <PageWrapper>
+    <PageWrapper>
+      <Transmutation>
         <ContentWrapper className="flex w-full flex-col gap-6">
           <div>
-            <Heading title="Welcome" className="flex flex-col gap-3" />
+            <Heading title={t("main_title")} className="flex flex-col gap-3" />
             <Separator />
           </div>
           <div className="flex flex-col gap-4">
-            <MainTitle title="About me." />
-            <p className="text-base !font-light">
-              Hello 👋, my name is Matheus, which means something close to{" "}
-              {"(Gift given by God)"} in Portuguese. Married, father of a little
-              angel, Software Engineer, musician, passionate about teaching and
-              minimalist, and who lives in the city of Manaus - Amazonas,
-              Brazil.
-            </p>
+            <MainTitle title={t("about_title")} />
+            <p className="text-base !font-light">{t("about_description")}</p>
           </div>
           <ExternalLink
             icon={false}
-            title="Open project in Github"
+            title={t("link_title_github")}
             href="https://github.com/matheusscode/www.matheusscode.com"
           >
             <DefImage
               width={900}
               height={400}
               src="https://github.com/user-attachments/assets/4cc1ef02-e07f-471f-9385-cc2854854d84"
-              alt="www.matheusscode.com banner"
+              alt={t("image_alt_github")}
               className="mx-auto cursor-pointer rounded-xl object-cover opacity-90 hover:opacity-100"
             />
           </ExternalLink>
           <div className="mt-8 flex flex-col gap-4">
-            <MainTitle title="Previous work." />
+            <MainTitle title={t("work_title")} />
             <EmploymentDetailsTable />
           </div>
         </ContentWrapper>
-      </PageWrapper>
-    </Transmutation>
+      </Transmutation>
+    </PageWrapper>
   );
 }

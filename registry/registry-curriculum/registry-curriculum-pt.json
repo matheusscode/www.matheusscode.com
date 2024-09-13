@@ -1,0 +1,86 @@
+{
+  "role": "Engenheiro de Software",
+  "name": "Matheus dos Santos Figueiredo",
+  "phone": "(92) 99982-7649",
+  "email": "matheussdev3@gmail.com",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/matheussfigueiredo/",
+    "github": "https://github.com/matheusscode"
+  },
+  "updated_at": "Última atualização em setembro de 2024",
+  "bio": "Sou apaixonado por aprendizado contínuo e tenho experiência no desenvolvimento de aplicações modulares, escaláveis e de alto desempenho. Já trabalhei com diversas tecnologias e estou sempre em busca de novos desafios para aprimorar minhas habilidades.",
+  "education": [
+    {
+      "id": 1,
+      "school": "UFAM - Universidade Federal do Amazonas",
+      "period": "Previsto para 2025",
+      "course": "Curso de Engenharia de Software"
+    },
+    {
+      "id": 2,
+      "school": "Escola Estadual Nathália Uchôa",
+      "period": "2020 - 2021",
+      "course": "Ensino Médio"
+    }
+  ],
+  "experiences": [
+    {
+      "id": 1,
+      "company": "Ream (Refinaria de Manaus)",
+      "locale": "Amazonas, Brasil",
+      "title": "Engenheiro de Software",
+      "description": "Como desenvolvedor front-end, introduzi um novo padrão de versionamento de código utilizando o GitHub, implementei práticas de Pull Requests (PRs) e configurei testes automatizados com Jest. Além disso, construí e mantive as seguintes aplicações:",
+      "projects": [
+        {
+          "id": 1,
+          "label": "CompanyCash",
+          "description": "Desenvolvi uma aplicação para envio de notificações e métricas de campanhas, garantindo integração eficaz e alta qualidade."
+        },
+        {
+          "id": 2,
+          "label": "PoshCash",
+          "description": "Trabalhei no front-end de um aplicativo de cashback e desconto, criando interfaces intuitivas e responsivas."
+        }
+      ],
+      "complemention": "Continuo garantindo a eficiência das aplicações, aplicando melhorias contínuas e mantendo altos padrões de qualidade.",
+      "stack": "React, TypeScript, Jest, Material UI, IoC, Next.js, React Native, Data Dog, Feature Flags",
+      "date": "2024 - Hoje"
+    },
+    {
+      "id": 2,
+      "company": "H.A.M (Hospital Adventista de Manaus)",
+      "locale": "Amazonas, Brasil",
+      "title": "Engenheiro de Software e Analista de Sistemas",
+      "description": "No Hospital Adventista de Manaus, atuei como Desenvolvedor FullStack e Analista de Sistemas. Contribuí para a estruturação e desenvolvimento de várias aplicações essenciais, melhorando a eficiência operacional do hospital:",
+      "complemention": "Além disso, introduzi melhorias de processos, adotando novas tecnologias, metodologias e padrões de design, aumentando a qualidade e inovação das soluções oferecidas.",
+      "projects": [
+        {
+          "id": 1,
+          "label": "Notificações via WhatsApp e Telegram",
+          "description": "Desenvolvi uma aplicação para envio de notificações importantes a pacientes e equipe médica, melhorando a comunicação e o engajamento."
+        },
+        {
+          "id": 2,
+          "label": "Gerenciamento de Aplicações do Hospital",
+          "description": "Criei uma solução para gerenciar operações hospitalares, otimizando recursos e processos."
+        },
+        {
+          "id": 3,
+          "label": "Atendimento de Urgência",
+          "description": "Defini a estrutura e desenvolvi uma aplicação para o pronto atendimento, facilitando o fluxo de atendimento e gestão de casos urgentes."
+        }
+      ],
+      "stack": "React, TypeScript, Jest, ChakraUI, Next.js, OracleDB, Node.js, Express.js, JavaScript, PostgreSQL, React Native, Styled Components",
+      "date": "2023 - 2024"
+    },
+    {
+      "id": 3,
+      "company": "Trixx - Tecnologia e Marketing",
+      "locale": "São Paulo, Brasil",
+      "title": "Desenvolvedor Front End",
+      "description": "Na Trixx, trabalhei 100% no front-end como Product Owner Assistant. Fui responsável por integrações, planejamento, estratégias de implementação e suporte a outros desenvolvedores. Contribuí para a manutenção e evolução de um aplicativo de venda de ingressos, assegurando sua estabilidade e eficiência. Posteriormente, liderei o desenvolvimento de um projeto inovador de gestão financeira, destacando-se pela robustez e interface amigável.",
+      "stack": "React, TypeScript, ChakraUI, Next.js, Styled Components, React Native, TailwindCSS",
+      "date": "2022 - 2023"
+    }
+  ]
+}

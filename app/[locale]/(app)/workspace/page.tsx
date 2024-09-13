@@ -7,15 +7,18 @@ import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { WorkspaceDetailsTable } from "@/ui/workspaces/workspace-details-table";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
+  const t = useTranslations("workspace");
+
   return (
-    <Transmutation>
-      <PageWrapper>
-        <RadialPurpleBlueFade />
+    <PageWrapper>
+      <RadialPurpleBlueFade />
+      <Transmutation>
         <ContentWrapper className="flex flex-col gap-6">
           <div>
-            <Heading title="Workspace" className="flex flex-col gap-3" />
+            <Heading title={t("main_title")} className="flex flex-col gap-3" />
             <Separator />
           </div>
           <DefImage
@@ -27,7 +30,7 @@ export default function Page() {
           />
           <WorkspaceDetailsTable />
         </ContentWrapper>
-      </PageWrapper>
-    </Transmutation>
+      </Transmutation>
+    </PageWrapper>
   );
 }

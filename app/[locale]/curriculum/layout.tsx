@@ -5,5 +5,5 @@ export default function CurriculumLayout({
 }: {
   children: Readonly<ReactNode>;
 }) {
-  return <div className="h-screen w-full p-4">{children}</div>;
+  return <div className="w-full p-4">{children}</div>;
 }

@@ -1,19 +1,36 @@
 "use client";
 
-import {
-  registry_language_name,
-  registry_locales,
-} from "@/registry/registry-locales";
-import { useLocale } from "next-intl";
+import { registry_locales } from "@/registry/registry-locales";
 import { usePathname, useRouter } from "next/navigation";
+import { ButtonHTMLAttributes, useState } from "react";
+import { cn } from "../utils/cn";
+import { Button, ButtonProps } from "./ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    ButtonProps {
+  placeholder?: string;
+}
+
+export function LanguageSwitcher({
+  placeholder,
+  className,
+  variant = "ghost",
+  children,
+  size = "icon",
+  ...props
+}: LanguageSwitcherProps) {
   const router = useRouter();
-  const locale = useLocale();
   const pathname = usePathname();
+  const [currentLocale, setCurrentLocale] = useState(
+    registry_locales.includes(pathname.split("/")[1])
+      ? pathname.split("/")[1]
+      : "en",
+  );
 
-  const switchLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = event.target.value;
+  const onTranslate = () => {
+    const newLocale = currentLocale === "en" ? "pt" : "en";
     const segments = pathname.split("/");
 
     if (registry_locales.includes(segments[1])) {
@@ -25,18 +42,28 @@ export function LanguageSwitcher() {
     const newPath = segments.join("/");
 
     if (newPath !== pathname) {
+      setCurrentLocale(newLocale);
       router.push(newPath);
       console.log("Navigating to:", newPath);
     }
   };
 
   return (
-    <select value={locale} onChange={switchLanguage}>
-      {registry_locales.map((lang) => (
-        <option key={lang} value={lang}>
-          {registry_language_name[lang]}
-        </option>
-      ))}
-    </select>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          {...props}
+          variant={variant}
+          size={size}
+          className={cn("text-lg", className)}
+          onClick={onTranslate}
+        >
+          {children || (currentLocale === "en" ? "🇧🇷" : "🇺🇸")}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent align="center" side="right">
+        {currentLocale === "en" ? "Mudar para português" : "Change to english"}
+      </TooltipContent>
+    </Tooltip>
   );
 }
