@@ -1,9 +1,9 @@
 export type RegistryJob = (typeof registry_jobs)[0];
 
 export const registry_jobs_columns: string[] = [
-  "Company",
-  "Office",
-  "Beginning and end",
+  "company",
+  "period",
+  "role",
 ] as const;
 
 export const registry_jobs = [
