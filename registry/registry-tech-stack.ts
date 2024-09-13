@@ -164,11 +164,6 @@ const database: RegistryTech[] = [
     key: "postgresql",
     name: "PostgreSQL",
   },
-  {
-    path: "https://www.oracle.com/br/database/",
-    key: "oracle_database",
-    name: "Oracle Database",
-  },
 ];
 
 const cloud: RegistryTech[] = [

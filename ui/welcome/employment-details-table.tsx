@@ -29,7 +29,7 @@ export const EmploymentDetailsTable = () => {
         <TableRow>
           {registry_jobs_columns.map((column, index) => (
             <TableHead key={index} className="w-[300px] px-4">
-              {column}
+              {t(`table_head_${column}` as never)}
             </TableHead>
           ))}
           <TableHead className="w-[70px] px-4 text-right"></TableHead>
@@ -51,13 +51,13 @@ export const EmploymentDetailsTable = () => {
                 },
               )}
             >
-              <TableCell className="px-4 py-3">
-                {t(`${job.key}_table_office` as never)}
-              </TableCell>
+              <TableCell className="px-4 py-3">{job.company}</TableCell>
               <TableCell className="px-4 py-3">
                 {t(`${job.key}_table_period` as never)}
               </TableCell>
-              <TableCell className="px-4 py-3">{job.office}</TableCell>
+              <TableCell className="px-4 py-3">
+                {t(`${job.key}_table_office` as never)}
+              </TableCell>
               <TableCell className="px-4 py-3">
                 <Link
                   className="text-blue-600 underline dark:text-blue-500"
