@@ -25,7 +25,7 @@ import { ThemeSwitcher } from "./theme-switcher";
 interface QuickExplorerProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
-  const t = useTranslations("MainNav");
+  const t = useTranslations("navigation");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -43,9 +43,9 @@ export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
   const renderLinks = (link: NavigateLink) => {
     return (
       <CommandItem key={link.id} asChild>
-        <Link href={link.path} className="flex gap-2.5 cursor-pointer">
+        <Link href={link.path} className="flex cursor-pointer gap-2.5">
           <span>{link.iconLeft && <link.iconLeft size={18} />}</span>
-          <span>{t(`NavLinks.${link.label.toLowerCase()}`)}</span>
+          <span>{t(`${link.label.toLowerCase()}` as never)}</span>
         </Link>
       </CommandItem>
     );
@@ -53,19 +53,19 @@ export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
 
   return (
     <>
-      <div className="flex w-full max-laptop:hidden items-center gap-2">
+      <div className="flex w-full items-center gap-2 max-laptop:hidden">
         <Button
           {...props}
           aria-label="command-explorer"
           onClick={() => setOpen(true)}
           className={cn(
-            "justify-between font-normal bg-transparent px-2 h-8 w-full text-foreground dark:text-muted-foreground/90",
+            "h-8 w-full justify-between bg-transparent px-2 font-normal text-foreground dark:text-muted-foreground/90",
             className,
           )}
           size="lg"
           variant="outline"
         >
-          <div className="text-sm flex w-full justify-between gap-2 items-center">
+          <div className="flex w-full items-center justify-between gap-2 text-sm">
             <div className="flex items-center gap-1.5">
               <SearchIcon size={17} />
               <span>Search...</span>
@@ -75,7 +75,7 @@ export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
             </kbd>
           </div>
         </Button>
-        <ThemeSwitcher className="min-w-8 h-8" />
+        <ThemeSwitcher className="h-8 min-w-8" />
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />

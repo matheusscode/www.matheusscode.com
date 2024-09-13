@@ -101,4 +101,16 @@
     @apply !mt-0;
   }
 
+  *::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-muted-foreground/10 rounded-full;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 transition-all rounded-full hover:bg-primary;
+  }
+
 }

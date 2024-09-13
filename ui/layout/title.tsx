@@ -1,4 +1,4 @@
-import { cn } from "@/packages/utils/cn";
+import { cn } from "@/utils/cn";
 import { HTMLAttributes } from "react";
 
 interface MainTitleProps extends HTMLAttributes<HTMLHeadingElement> {
@@ -14,7 +14,7 @@ export const MainTitle = ({
   return (
     <h1
       {...props}
-      className={cn("text-lg font-medium tracking-tight font-sans", className)}
+      className={cn("font-sans text-lg font-medium tracking-tight", className)}
     >
       {children || title}
     </h1>

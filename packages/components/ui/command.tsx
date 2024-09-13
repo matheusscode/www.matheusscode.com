@@ -6,7 +6,7 @@ import { Command as CommandPrimitive } from "cmdk";
 import * as React from "react";
 
 import { Dialog, DialogContent } from "@/packages/components/ui/dialog";
-import { cn } from "@/packages/utils/cn";
+import { cn } from "@/utils/cn";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
