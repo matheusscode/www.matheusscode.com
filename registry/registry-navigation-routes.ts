@@ -9,7 +9,6 @@ import {
   LucideIcon,
   NavigationIcon,
   SparklesIcon,
-  SquareKanbanIcon,
   Wand2Icon,
   YoutubeIcon,
 } from "lucide-react";
@@ -52,13 +51,13 @@ export const registry_nav_links: NavigateLink[] = [
     target: "_self",
     iconLeft: Wand2Icon,
   },
-  {
-    id: 4,
-    path: "/projects",
-    label: "Projects",
-    target: "_self",
-    iconLeft: SquareKanbanIcon,
-  },
+  // {
+  //   id: 4,
+  //   path: "/projects",
+  //   label: "Projects",
+  //   target: "_self",
+  //   iconLeft: SquareKanbanIcon,
+  // },
   {
     id: 5,
     path: "/workspace",
