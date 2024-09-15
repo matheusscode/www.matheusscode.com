@@ -9,12 +9,9 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 interface LanguageSwitcherProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonProps {
-  placeholder?: string;
-}
+    ButtonProps {}
 
 export function LanguageSwitcher({
-  placeholder,
   className,
   variant = "ghost",
   children,
@@ -53,6 +50,7 @@ export function LanguageSwitcher({
       <TooltipTrigger asChild>
         <Button
           {...props}
+          aria-label="language-translate-switcher"
           variant={variant}
           size={size}
           className={cn("text-lg", className)}

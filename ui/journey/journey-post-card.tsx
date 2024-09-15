@@ -4,8 +4,7 @@ import { HTMLAttributes } from "react";
 export type JourneyDataProps = {
   title?: string;
   description?: string;
-  picture?: string;
-  index?: number;
+  media?: string;
 };
 
 interface JourneyPostCardProps
@@ -29,12 +28,12 @@ export const JourneyPostCard = ({
       {content.description && (
         <p className="mb-2 text-sm">{content.description}</p>
       )}
-      {content.picture && (
-        <div className="mt-2.5 w-full max-w-[596px] overflow-hidden rounded-xl">
+      {content.media && (
+        <div className="my-2.5 h-auto w-auto">
           <img
-            src={content.picture}
-            alt={content.title || content.description}
-            className="h-[720px] w-full object-cover"
+            src={content.media}
+            alt={content.title!}
+            className="h-full w-full rounded-xl object-cover"
           />
         </div>
       )}
