@@ -1,7 +1,7 @@
+import { getPosts } from "@/app/_services/notion";
 import { RadialBlueFade } from "@/packages/components/background-radials";
 import { Separator } from "@/packages/components/ui/separator";
 import { getYearFromDate } from "@/packages/utils/get-values";
-import { journey } from "@/registry/registry-journey";
 import { JourneyConnectingLine } from "@/ui/journey/journey-connecting-line";
 import { JourneyPostCard } from "@/ui/journey/journey-post-card";
 import { JourneyTimeLine } from "@/ui/journey/journey-time-line";
@@ -19,8 +19,11 @@ interface Props {
 }
 
 export default async function Page({ params: { locale } }: Props) {
-  const t = await getTranslations({ locale, namespace: "journey" });
+  const posts = await getPosts(process.env.NOTION_JOURNEY_DATABASE_ID!);
 
+  console.log(posts);
+
+  const t = await getTranslations({ locale, namespace: "journey" });
   unstable_setRequestLocale(locale);
 
   return (
@@ -33,16 +36,22 @@ export default async function Page({ params: { locale } }: Props) {
             <Separator />
           </div>
           <div className="mt-5 flex flex-col items-stretch">
-            {journey.map((tour, index) => {
+            {posts.map((tour, index) => {
               const currentYear = getYearFromDate(tour.date);
 
               const isFirstPostOfYear =
                 index === 0 ||
-                getYearFromDate(journey[index - 1].date) !== currentYear;
+                getYearFromDate(posts[index - 1].date) !== currentYear;
 
               const isSameYear =
-                index < journey.length - 1 &&
-                getYearFromDate(journey[index + 1].date) === currentYear;
+                index < posts.length - 1 &&
+                getYearFromDate(posts[index + 1].date) === currentYear;
+
+              const contentWithi18nApplied = {
+                title: locale === "en" ? tour.title_en : tour.title_pt,
+                description:
+                  locale === "en" ? tour.description_en : tour.description_pt,
+              };
 
               return (
                 <div
@@ -55,15 +64,25 @@ export default async function Page({ params: { locale } }: Props) {
                   />
                   <ContentWrapper as="section">
                     <div
-                      key={`data__log_${tour.id}`}
+                      id={`${encodeURIComponent(tour.id)}`}
                       className="relative flex last:pb-0"
                     >
                       {isSameYear && <JourneyConnectingLine />}
-                      <div className="z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary align-middle text-background">
+                      <a
+                        aria-label={`${tour.date}_${contentWithi18nApplied.title}`}
+                        href={`#${encodeURIComponent(tour.id)}`}
+                        className="z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary align-middle text-background"
+                      >
                         <PlusIcon size={16} />
-                      </div>
+                      </a>
                       <div className="w-full max-w-[650px] flex-grow pb-6 pl-8">
-                        <JourneyPostCard content={tour.content} />
+                        <JourneyPostCard
+                          content={{
+                            title: contentWithi18nApplied.title,
+                            description: contentWithi18nApplied.description,
+                            media: tour.media,
+                          }}
+                        />
                       </div>
                     </div>
                   </ContentWrapper>

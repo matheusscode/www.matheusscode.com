@@ -5,7 +5,6 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  webVitalsAttribution: ["CLS", "LCP", "RES", "FCP", "INP", "FID", "TTFB"],
   experimental: {
     optimizePackageImports: [
       "framer-motion",
@@ -25,6 +24,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "github.com",
         pathname: "/user-attachments/assets/**",
+      },
+      {
+        protocol: "https",
+        hostname: "prod-files-secure.s3.us-west-2.amazonaws.com",
+        pathname: "/**",
       },
     ],
   },
