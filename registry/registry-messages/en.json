@@ -97,7 +97,12 @@
     "repositories_description": "Check out my GitHub projects and explore the repositories I'm working on.",
     "gist_description": "Check out my custom VSCode settings, optimized for productivity and development with a focus on performance and usability.",
     "repositories_caption": "My repositories ❤️",
-    "gist_caption": "My Visual Studio Code Config ❤️"
+    "gist_caption": "My Visual Studio Code Config ❤️",
+    "gist_cliboard_success": "Copied to clipboard!",
+    "gist_cliboard_error": "Error copying text!",
+    "gist_cliboard_label_copy": "Copy",
+    "gist_cliboard_label_copied": "Copied!",
+    "see_more": "See more!"
   },
   "navigation": {
     "home": "Home",
