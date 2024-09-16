@@ -4,7 +4,6 @@ import { ExternalLink } from "@/packages/components/eternal-link";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -67,10 +66,10 @@ export const WorkspaceDetailsTable = () => {
           );
         })}
       </TableBody>
-      <TableCaption className="py-3">
+      {/* <TableCaption className="py-3">
         {t("table_caption")}
         <ExternalLink href="https://some.wtf">some.wtf</ExternalLink>
-      </TableCaption>
+      </TableCaption> */}
     </Table>
   );
 };
