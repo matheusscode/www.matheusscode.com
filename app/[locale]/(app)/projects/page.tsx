@@ -1,7 +1,9 @@
 import { getGist, getProfile, getRepos } from "@/app/_services/github";
 import { GithubProfile, GithubRepository } from "@/interfaces/github";
+import { ExternalLink } from "@/packages/components/eternal-link";
 import { Separator } from "@/packages/components/ui/separator";
 import { Skeleton } from "@/packages/components/ui/skeleton";
+import { registry_github_static_info } from "@/registry/registry-github";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
@@ -25,6 +27,8 @@ export default async function Page({ params: { locale } }: Props) {
   const user: GithubProfile = await getProfile();
   const repositories: GithubRepository[] = await getRepos();
   const gist = await getGist();
+
+  console.log(user);
 
   return (
     <PageWrapper>
@@ -56,9 +60,17 @@ export default async function Page({ params: { locale } }: Props) {
                 ))
                 .reverse()}
             </div>
-            <span className="mt-4 text-center text-xs text-muted-foreground">
-              {t("repositories_caption")}
-            </span>
+            <div className="mt-4 flex w-full items-center justify-between">
+              <span className="text-center text-xs text-muted-foreground">
+                {t("repositories_caption")}
+              </span>
+              <ExternalLink
+                href={registry_github_static_info.repositories_url}
+                className="text-xs"
+              >
+                {t("see_more")}
+              </ExternalLink>
+            </div>
           </div>
           <Separator className="mb-3.5 mt-2" />
           <div className="flex flex-col">

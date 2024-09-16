@@ -101,7 +101,8 @@
     "gist_cliboard_success": "Copiado para aréa de transferência",
     "gist_cliboard_error": "Ocorreu um error ao copiar!",
     "gist_cliboard_label_copy": "Copiar",
-    "gist_cliboard_label_copied": "Copiado!"
+    "gist_cliboard_label_copied": "Copiado!",
+    "see_more": "Veja mais!"
   },
   "navigation": {
     "home": "Início",
