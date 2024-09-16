@@ -91,6 +91,14 @@
     "product_laptop": "Alto desempenho, Full HD, 165Hz.",
     "buy_button": "Comprar"
   },
+  "projects": {
+    "main_title": "Projetos",
+    "repositories_title": "Repositorios",
+    "repositories_description": "Confira meus projetos do GitHub e explore os repositórios em que estou trabalhando.",
+    "gist_description": "Confira as minhas configurações personalizadas do VSCode, otimizadas para produtividade e desenvolvimento com foco em performance e usabilidade.",
+    "repositories_caption": "Meus repositórios ❤️",
+    "gist_caption": "Minha configuração do Visual Studi Cocde ❤️"
+  },
   "navigation": {
     "home": "Início",
     "journey": "Jornada",
