@@ -1,3 +1,4 @@
+import { Toaster } from "@/packages/components/ui/sonner";
 import { TooltipProvider } from "@/packages/components/ui/tooltip";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
@@ -15,6 +16,7 @@ export default async function Providers({
       disableTransitionOnChange
     >
       <TooltipProvider delayDuration={50}>{children}</TooltipProvider>
+      <Toaster />
     </ThemeProvider>
   );
 }
