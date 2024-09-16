@@ -28,8 +28,6 @@ export default async function Page({ params: { locale } }: Props) {
   const repositories: GithubRepository[] = await getRepos();
   const gist = await getGist();
 
-  console.log(user);
-
   return (
     <PageWrapper>
       <Transmutation>
