@@ -14,7 +14,7 @@ export interface GithubProfileDetailsProps {
 export const GithubProfileDetails = ({ user }: GithubProfileDetailsProps) => {
   return (
     <div className="relative flex h-32 items-center rounded-md border border-input bg-gradient-to-br from-stone-50/50 to-gray-300/50 p-2 shadow-sm transition-all dark:from-transparent dark:to-zinc-900">
-      <div className="absolute -bottom-11 left-8 flex items-center gap-2">
+      <div className="absolute -bottom-11 left-4 flex items-center gap-2 laptop:left-8">
         <div className="relative">
           <Avatar className="min-h-24 min-w-24">
             <AvatarImage
@@ -42,9 +42,15 @@ export const GithubProfileDetails = ({ user }: GithubProfileDetailsProps) => {
             &quot;{user?.bio || registry_github_static_info.short_loading}
             .&quot;
           </em>
+          <span className="block text-sm text-muted-foreground laptop:hidden">
+            Actual Company:{" "}
+            <span className="text-primary">
+              {user?.company || registry_github_static_info.short_loading}
+            </span>
+          </span>
         </div>
       </div>
-      <div className="absolute bottom-2 right-8">
+      <div className="absolute bottom-2 right-8 hidden laptop:block">
         <span className="text-sm text-muted-foreground">
           Actual Company:{" "}
           <span className="text-primary">
