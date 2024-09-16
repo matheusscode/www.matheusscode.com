@@ -25,8 +25,6 @@ export default async function Page({ params: { locale } }: Props) {
   const gist = await fetch(process.env.VSCODE_SETTINGS_GIST_URL!);
   const trasnformerGist = await gist.text();
 
-  console.log(user);
-
   return (
     <PageWrapper>
       <Transmutation>
