@@ -12,14 +12,14 @@ export interface GithubRepositoryCardProps {
 }
 
 export const GithubRepositoryCard = ({ repo }: GithubRepositoryCardProps) => {
-  const hasStars = repo.stargazers_count > 0;
-  const hasForks = repo.forks_count > 0;
-  const hasWatchers = repo.watchers_count > 0;
-  const hasTopics = repo.topics.length > 0;
+  const hasStars = repo?.stargazers_count > 0;
+  const hasForks = repo?.forks_count > 0;
+  const hasWatchers = repo?.watchers_count > 0;
+  const hasTopics = repo?.topics?.length > 0;
 
   return (
     <Link
-      href={repo.html_url}
+      href={repo?.html_url}
       target="_blank"
       rel="noreferrer noopener"
       referrerPolicy="no-referrer"
@@ -31,20 +31,20 @@ export const GithubRepositoryCard = ({ repo }: GithubRepositoryCardProps) => {
         <div className="flex w-full flex-col gap-1">
           <div className="flex items-center gap-1.5">
             <h1 className="text-base font-normal tracking-normal">
-              {repo.name}
+              {repo?.name}
             </h1>
             <Badge className="h-4 rounded-full border border-input bg-accent px-1.5 text-xs font-normal text-primary/90 shadow-none hover:bg-accent dark:text-muted-foreground">
-              {transformToPascalCase(repo.visibility)}
+              {transformToPascalCase(repo?.visibility)}
             </Badge>
           </div>
           <p className="mb-1.5 text-xs text-muted-foreground">
-            {truncate(repo.description, 85)}
+            {truncate(repo?.description, 85)}
           </p>
         </div>
 
         {hasTopics && (
           <div className="flex flex-wrap gap-1">
-            {repo.topics.map((topic) => (
+            {repo?.topics?.map((topic) => (
               <Badge key={topic} className="h-5 px-1 font-normal">
                 {topic}
               </Badge>
@@ -56,14 +56,14 @@ export const GithubRepositoryCard = ({ repo }: GithubRepositoryCardProps) => {
           <div className="flex items-center gap-1">
             <span className="h-2 w-2 rounded-full bg-blue-500" />
             <span className="text-xs font-medium text-muted-foreground">
-              {repo.language}
+              {repo?.language}
             </span>
           </div>
-          {repo.license?.name && (
+          {repo?.license?.name && (
             <div className="flex items-center gap-1">
               <ScaleIcon size={15} className="text-muted-foreground" />
               <span className="whitespace-nowrap text-xs font-medium text-muted-foreground">
-                {repo.license?.name}
+                {repo?.license?.name}
               </span>
             </div>
           )}
@@ -71,19 +71,19 @@ export const GithubRepositoryCard = ({ repo }: GithubRepositoryCardProps) => {
             {hasStars && (
               <span className="flex items-center gap-1.5 text-xs">
                 <StarFilledIcon className="text-amber-400" />
-                {repo.stargazers_count}
+                {repo?.stargazers_count}
               </span>
             )}
             {hasForks && (
               <span className="flex items-center gap-1.5 text-xs">
                 <GitForkIcon size={15} className="text-muted-foreground" />
-                {repo.forks_count}
+                {repo?.forks_count}
               </span>
             )}
             {hasWatchers && (
               <span className="flex items-center gap-1.5 text-xs">
                 <EyeIcon size={15} className="text-muted-foreground" />
-                {repo.watchers_count}
+                {repo?.watchers_count}
               </span>
             )}
           </div>

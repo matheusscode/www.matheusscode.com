@@ -44,7 +44,7 @@ export default async function Page({ params: { locale } }: Props) {
             <div className="mt-3.5 grid grid-cols-1 gap-2 laptop:grid-cols-2">
               {repository
                 .map((repo) => (
-                  <GithubRepositoryCard key={repo.id} repo={repo} />
+                  <GithubRepositoryCard key={repo?.id} repo={repo} />
                 ))
                 .reverse()}
             </div>
