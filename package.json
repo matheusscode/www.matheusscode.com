@@ -1,6 +1,6 @@
 {
   "name": "www.matheusscode.com",
-  "version": "0.1.0",
+  "version": "1.0.7",
   "private": true,
   "license": "AGPL-3.0-or-later",
   "packageManager": "pnpm@9.6.0",
