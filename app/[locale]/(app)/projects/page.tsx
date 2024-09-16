@@ -37,7 +37,7 @@ export default async function Page({ params: { locale } }: Props) {
           <div className="mt-14 flex flex-col">
             <div>
               <h1 className="text-lg">{t("repositories_title")}</h1>
-              <p className="mb-0 text-sm text-muted-foreground/70">
+              <p className="mb-0 text-sm text-primary/80 dark:text-muted-foreground/90">
                 {t("repositories_description")}
               </p>
             </div>
@@ -56,7 +56,7 @@ export default async function Page({ params: { locale } }: Props) {
           <div className="flex flex-col">
             <div>
               <h1 className="text-lg">Gist</h1>
-              <p className="mb-0 text-sm text-muted-foreground/70">
+              <p className="mb-0 text-sm text-primary/80 dark:text-muted-foreground/90">
                 {t("gist_description")}
               </p>
             </div>

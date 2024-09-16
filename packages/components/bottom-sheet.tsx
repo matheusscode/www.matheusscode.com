@@ -28,6 +28,7 @@ export function BottomSheet({
         <Button
           {...props}
           size={size}
+          aria-label="bottom-sheet-bottom"
           variant={variant}
           className={cn(className)}
         >
@@ -36,7 +37,7 @@ export function BottomSheet({
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-lg">
-          <ScrollArea className="max-mobile:h-96 py-10 px-4">
+          <ScrollArea className="max-mobile:h-96 px-4 py-10">
             <DrawerHeader className="p-0">
               <ProfileLinkCard href="/" className="p-0" />
             </DrawerHeader>

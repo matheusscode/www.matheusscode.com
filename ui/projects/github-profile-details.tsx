@@ -30,7 +30,7 @@ export const GithubProfileDetails = ({ user }: GithubProfileDetailsProps) => {
             </span>
           </h1>
           <p className="mb-0 text-sm text-primary/80">{user.location}</p>
-          <em className="text-sm text-muted-foreground/70">
+          <em className="dark:text-muted-foreground/ text-sm text-muted-foreground/90">
             &quot;{user.bio}.&quot;
           </em>
         </div>

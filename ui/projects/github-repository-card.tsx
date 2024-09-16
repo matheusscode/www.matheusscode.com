@@ -33,7 +33,7 @@ export const GithubRepositoryCard = ({ repo }: GithubRepositoryCardProps) => {
             <h1 className="text-base font-normal tracking-normal">
               {repo.name}
             </h1>
-            <Badge className="h-4 rounded-full border border-input bg-accent px-1.5 text-xs font-normal text-muted-foreground shadow-none hover:bg-accent">
+            <Badge className="h-4 rounded-full border border-input bg-accent px-1.5 text-xs font-normal text-primary/90 shadow-none hover:bg-accent dark:text-muted-foreground">
               {transformToPascalCase(repo.visibility)}
             </Badge>
           </div>
