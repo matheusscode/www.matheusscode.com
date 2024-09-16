@@ -16,7 +16,7 @@ export default async function Providers({
       disableTransitionOnChange
     >
       <TooltipProvider delayDuration={50}>{children}</TooltipProvider>
-      <Toaster />
+      <Toaster duration={3000} position="bottom-right" />
     </ThemeProvider>
   );
 }

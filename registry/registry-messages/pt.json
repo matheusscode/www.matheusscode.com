@@ -97,7 +97,11 @@
     "repositories_description": "Confira meus projetos do GitHub e explore os repositórios em que estou trabalhando.",
     "gist_description": "Confira as minhas configurações personalizadas do VSCode, otimizadas para produtividade e desenvolvimento com foco em performance e usabilidade.",
     "repositories_caption": "Meus repositórios ❤️",
-    "gist_caption": "Minha configuração do Visual Studi Cocde ❤️"
+    "gist_caption": "Minha configuração do Visual Studi Cocde ❤️",
+    "gist_cliboard_success": "Copiado para aréa de transferência",
+    "gist_cliboard_error": "Ocorreu um error ao copiar!",
+    "gist_cliboard_label_copy": "Copiar",
+    "gist_cliboard_label_copied": "Copiado!"
   },
   "navigation": {
     "home": "Início",
