@@ -3,7 +3,7 @@ import { GithubProfile, GithubRepository } from "@/interfaces/github";
 import { ExternalLink } from "@/packages/components/eternal-link";
 import { Separator } from "@/packages/components/ui/separator";
 import { Skeleton } from "@/packages/components/ui/skeleton";
-import { registry_github_static_info } from "@/registry/registry-github";
+import { registry_myself } from "@/registry/registry-myself";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
@@ -63,7 +63,7 @@ export default async function Page({ params: { locale } }: Props) {
                 {t("repositories_caption")}
               </span>
               <ExternalLink
-                href={registry_github_static_info.repositories_url}
+                href={registry_myself.repositories_url}
                 className="text-xs"
               >
                 {t("see_more")}
