@@ -1,12 +1,6 @@
 import { DefaultNavigationContent } from "@/components/default-navigation-content";
-import { ProfileLinkCard } from "@/components/profile-link-card";
 import { Button, ButtonProps } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CommandIcon } from "lucide-react";
 import { ButtonHTMLAttributes } from "react";
@@ -37,10 +31,7 @@ export function BottomSheet({
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-lg">
-          <ScrollArea className="max-mobile:h-96 px-4 py-10">
-            <DrawerHeader className="p-0">
-              <ProfileLinkCard href="/" className="p-0" />
-            </DrawerHeader>
+          <ScrollArea className="h-[550px] px-4 pb-10">
             <DefaultNavigationContent />
           </ScrollArea>
         </div>

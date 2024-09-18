@@ -15,7 +15,8 @@
     "trixx_table_period": "07/22 - 03/23",
     "table_head_company": "Company",
     "table_head_period": "Period",
-    "table_head_role": "Role"
+    "table_head_role": "Role",
+    "stack_description": "Technologies I am most familiar with"
   },
   "journey": {
     "main_title": "Journey"
@@ -122,5 +123,8 @@
     "description": "Enter your email below.",
     "placeholder": "Enter your email",
     "label": "Send"
+  },
+  "globals": {
+    "loading": "Loading..."
   }
 }

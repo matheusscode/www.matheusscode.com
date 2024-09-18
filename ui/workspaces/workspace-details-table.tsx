@@ -19,7 +19,7 @@ export const WorkspaceDetailsTable = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <Table>
+    <Table className="w-full">
       <TableHeader>
         <TableRow>
           <TableHead className="min-w-[300px] px-4">

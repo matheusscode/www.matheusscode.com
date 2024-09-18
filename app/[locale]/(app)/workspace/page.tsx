@@ -3,6 +3,7 @@ import { DefImage } from "@/packages/components/def-image";
 import { Separator } from "@/packages/components/ui/separator";
 import { constructMetadata } from "@/packages/utils/construct-metadata";
 import setup_print from "@/public/setup/setup-light.jpeg";
+import transitions from "@/registry/registry-animations";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
@@ -32,22 +33,24 @@ export default async function Page({ params: { locale } }: Props) {
   return (
     <PageWrapper>
       <RadialPurpleBlueFade />
-      <Transmutation>
-        <ContentWrapper className="flex flex-col gap-6">
+      <ContentWrapper className="flex flex-col gap-6">
+        <Transmutation transition={transitions.goDown}>
           <div>
             <Heading title={t("main_title")} className="flex flex-col gap-3" />
             <Separator />
           </div>
-          <DefImage
-            src={setup_print}
-            alt="Light-themed setup illustration showing workspace layout"
-            width={540}
-            height={100}
-            className="my-4"
-          />
+        </Transmutation>
+        <DefImage
+          src={setup_print}
+          alt="Light-themed setup illustration showing workspace layout"
+          width={540}
+          height={100}
+          className="my-4"
+        />
+        <Transmutation className="w-full" transition={transitions.goUp}>
           <WorkspaceDetailsTable />
-        </ContentWrapper>
-      </Transmutation>
+        </Transmutation>
+      </ContentWrapper>
     </PageWrapper>
   );
 }

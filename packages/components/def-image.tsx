@@ -1,3 +1,4 @@
+import transitions from "@/registry/registry-animations";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { cn } from "@/utils/cn";
 import Image, { ImageProps } from "next/image";
@@ -14,13 +15,7 @@ export const DefImage = ({
   ...props
 }: DefImageProps) => {
   return (
-    <Transmutation
-      initial={{
-        filter: "blur(2px)",
-        opacity: 0,
-      }}
-      time={0.8}
-    >
+    <Transmutation transition={transitions.reveal} time={0.8}>
       <Image
         {...props}
         width={width}

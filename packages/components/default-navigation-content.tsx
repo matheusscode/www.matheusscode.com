@@ -18,7 +18,7 @@ export const DefaultNavigationContent = ({
 }: DefaultNavigationContentProps) => {
   return (
     <div {...props} className={cn("mt-4 flex h-full flex-col", className)}>
-      <QuickExplorer />
+      <QuickExplorer className="hidden laptop:flex" />
       <div className="justify mt-3.5 flex w-full flex-col gap-4 text-sm">
         <NavigationList links={registry_nav_links} hasCount />
         <hr />

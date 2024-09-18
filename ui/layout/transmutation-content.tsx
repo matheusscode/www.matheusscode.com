@@ -4,33 +4,27 @@ import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import { ComponentProps } from "react";
 
+type Transition = {
+  initial: Record<string, string | number>;
+  animate: Record<string, string | number>;
+};
+
 interface TransmutationProps extends ComponentProps<typeof motion.div> {
   time?: number;
+  transition: Transition;
 }
-
-const defaultInitialValues = {
-  y: -6,
-  opacity: 0,
-};
-
-const defaultAnimateValues = {
-  y: 0,
-  opacity: 1,
-  filter: "blur(0px)",
-};
 
 export default function Transmutation({
   className,
-  initial = defaultInitialValues,
-  animate = defaultAnimateValues,
-  time = 0.3,
+  transition,
+  time = 0.4,
   ...props
 }: TransmutationProps) {
   return (
     <motion.div
       {...props}
-      initial={initial}
-      animate={animate}
+      initial={transition?.initial}
+      animate={transition?.animate}
       transition={{ ease: "easeIn", duration: time }}
       className={cn(className)}
     />

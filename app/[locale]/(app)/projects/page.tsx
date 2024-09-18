@@ -1,8 +1,10 @@
 import { getGist, getProfile, getRepos } from "@/app/_services/github";
 import { GithubProfile, GithubRepository } from "@/interfaces/github";
+import { RadialGradientScreen } from "@/packages/components/background-radials";
 import { ExternalLink } from "@/packages/components/eternal-link";
 import { Separator } from "@/packages/components/ui/separator";
 import { Skeleton } from "@/packages/components/ui/skeleton";
+import transitions from "@/registry/registry-animations";
 import { registry_myself } from "@/registry/registry-myself";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
@@ -30,30 +32,45 @@ export default async function Page({ params: { locale } }: Props) {
 
   return (
     <PageWrapper>
-      <Transmutation>
-        <ContentWrapper className="flex flex-col gap-6">
+      <RadialGradientScreen />
+      <ContentWrapper className="flex flex-col gap-6">
+        <Transmutation transition={transitions.goDown}>
           <div>
             <Heading title={t("main_title")} />
             <Separator />
           </div>
+        </Transmutation>
+        <Transmutation transition={transitions.goDown}>
           <GithubProfileDetails user={user} />
-          <div className="mt-14 flex flex-col">
-            <div>
-              <h1 className="text-lg">{t("repositories_title")}</h1>
-              <p className="mb-0 text-sm text-primary/80 dark:text-muted-foreground/90">
-                {t("repositories_description")}
-              </p>
-            </div>
+        </Transmutation>
+        <Transmutation transition={transitions.goUp}>
+          <div className="mt-40 flex flex-col laptop:mt-14">
+            <Transmutation transition={transitions.reveal}>
+              <div>
+                <h1 className="text-lg">{t("repositories_title")}</h1>
+                <p className="mb-0 text-sm text-primary/80 dark:text-muted-foreground/90">
+                  {t("repositories_description")}
+                </p>
+              </div>
+            </Transmutation>
             <div className="mt-3.5 grid grid-cols-1 gap-2 laptop:grid-cols-2">
               {repositories
-                .map((repo) => (
+                .map((repo, index) => (
                   <Suspense
                     key={repo?.id}
                     fallback={
                       <Skeleton className="h-[128px] w-[444px] rounded-md" />
                     }
                   >
-                    <GithubRepositoryCard repo={repo} />
+                    <Transmutation
+                      className="h-full flex-1"
+                      transition={transitions.goUp}
+                      time={index * 0.18}
+                    >
+                      <Transmutation transition={transitions.reveal}>
+                        <GithubRepositoryCard repo={repo} />
+                      </Transmutation>
+                    </Transmutation>
                   </Suspense>
                 ))
                 .reverse()}
@@ -71,13 +88,17 @@ export default async function Page({ params: { locale } }: Props) {
             </div>
           </div>
           <Separator className="mb-3.5 mt-2" />
+        </Transmutation>
+        <Transmutation transition={transitions.goUp} time={0.6}>
           <div className="flex flex-col">
-            <div>
-              <h1 className="text-lg">Gist</h1>
-              <p className="mb-0 text-sm text-primary/80 dark:text-muted-foreground/90">
-                {t("gist_description")}
-              </p>
-            </div>
+            <Transmutation transition={transitions.reveal}>
+              <div>
+                <h1 className="text-lg">Gist</h1>
+                <p className="mb-0 text-sm text-primary/80 dark:text-muted-foreground/90">
+                  {t("gist_description")}
+                </p>
+              </div>
+            </Transmutation>
             <Suspense
               fallback={<Skeleton className="h-[444px] w-full rounded-md" />}
             >
@@ -87,8 +108,8 @@ export default async function Page({ params: { locale } }: Props) {
               {t("gist_caption")}
             </span>
           </div>
-        </ContentWrapper>
-      </Transmutation>
+        </Transmutation>
+      </ContentWrapper>
     </PageWrapper>
   );
 }

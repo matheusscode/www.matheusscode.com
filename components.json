@@ -14,6 +14,7 @@
     "components": "@/components",
     "utils": "@/utils/cn",
     "ui": "@/components/ui",
+    "magicui": "@/components/magicui",
     "lib": "@/utils",
     "hooks": "@/hooks"
   }

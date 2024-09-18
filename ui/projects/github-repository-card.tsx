@@ -24,7 +24,7 @@ export const GithubRepositoryCard = ({ repo }: GithubRepositoryCardProps) => {
       rel="noreferrer noopener"
       referrerPolicy="no-referrer"
       className={cn(
-        "relative flex select-none items-start justify-start rounded-md border border-input px-2.5 py-2.5 shadow-sm transition-all hover:bg-accent/60",
+        "relative flex h-full flex-1 select-none items-start justify-start rounded-md border border-input bg-background px-2.5 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-accent/60",
       )}
     >
       <article className="flex h-full flex-col justify-between gap-1.5">
