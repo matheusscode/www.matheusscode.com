@@ -64,7 +64,7 @@ export const GithubGistJSON = ({
           <pre
             {...props}
             className={cn(
-              "h-96 w-full overflow-hidden overflow-y-scroll font-mono text-muted-foreground/70",
+              "h-96 w-full overflow-hidden overflow-y-scroll font-mono text-primary/90 dark:text-muted-foreground/90",
               className,
             )}
           >

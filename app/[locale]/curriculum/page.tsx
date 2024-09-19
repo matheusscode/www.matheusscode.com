@@ -55,16 +55,24 @@ export default function Page({ params: { locale } }: Props) {
               </span>
             </div>
           </div>
-          <div className="mt-2.5 flex w-full flex-col items-end justify-end gap-1.5 print:gap-1">
+          <div className="mt-2.5 flex w-full flex-col items-end justify-end gap-1.5 print:my-2.5 print:gap-1">
             <div className="flex flex-col items-end justify-end gap-0.5">
-              <ExternalLink href={content.links.github}>
+              <ExternalLink
+                href={content.links.github}
+                className="print:text-xs"
+              >
                 {content.links.github}
               </ExternalLink>
-              <ExternalLink href={content.links.linkedin}>
+              <ExternalLink
+                href={content.links.linkedin}
+                className="print:text-xs"
+              >
                 {content.links.linkedin}
               </ExternalLink>
             </div>
-            <span className="text-muted-foreground">{content.updated_at}</span>
+            <span className="text-muted-foreground print:text-xs">
+              {content.updated_at}
+            </span>
           </div>
           <p className="mb-0 mt-2 font-normal print:mt-1">{content.bio}</p>
         </ContentWrapper>

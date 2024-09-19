@@ -55,6 +55,7 @@ export default async function Page({ params: { locale } }: Props) {
             </Transmutation>
             <div className="mt-3.5 grid grid-cols-1 gap-2 laptop:grid-cols-2">
               {repositories
+                .slice(0, 4)
                 .map((repo, index) => (
                   <Suspense
                     key={repo?.id}
