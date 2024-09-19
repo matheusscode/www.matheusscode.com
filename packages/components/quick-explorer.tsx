@@ -11,11 +11,13 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { Link } from "@/i18n/routing";
+import transitions from "@/registry/registry-animations";
 import {
   NavigateLink,
   registry_nav_links,
   registry_social_links,
 } from "@/registry/registry-navigation-routes";
+import Transmutation from "@/ui/layout/transmutation-content";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ButtonHTMLAttributes, useEffect, useState } from "react";
@@ -52,8 +54,13 @@ export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
   };
 
   return (
-    <>
-      <div className="flex w-full items-center gap-2 max-laptop:hidden">
+    <Transmutation transition={transitions.slideToRight}>
+      <div
+        className={cn(
+          "max-laptop:hidden flex w-full items-center gap-2",
+          className,
+        )}
+      >
         <Button
           {...props}
           aria-label="command-explorer"
@@ -90,6 +97,6 @@ export const QuickExplorer = ({ className, ...props }: QuickExplorerProps) => {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </>
+    </Transmutation>
   );
 };

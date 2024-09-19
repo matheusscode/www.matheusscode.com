@@ -15,7 +15,8 @@
     "trixx_table_period": "07/22 - 03/23",
     "table_head_company": "Empresa",
     "table_head_period": "Periodo",
-    "table_head_role": "Cargo"
+    "table_head_role": "Cargo",
+    "stack_description": "Tecnologias com quais tenho mais familiaridade"
   },
   "journey": {
     "main_title": "Jornada"
@@ -122,5 +123,9 @@
     "description": "Insira seu e-mail abaixo.",
     "placeholder": "Digite seu e-mail",
     "label": "Enviar"
+  },
+  "globals": {
+    "loading": "Carregando...",
+    "donwload": "Baixar"
   }
 }

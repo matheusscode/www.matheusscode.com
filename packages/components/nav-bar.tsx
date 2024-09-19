@@ -3,6 +3,7 @@
 import { BottomSheet } from "@/components/bottom-sheet";
 import { ProfileLinkCard } from "@/components/profile-link-card";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import transitions from "@/registry/registry-animations";
 import Transmutation from "@/ui/layout/transmutation-content";
 import { cn } from "@/utils/cn";
 import { usePathname } from "next/navigation";
@@ -16,12 +17,9 @@ export const NavBar = ({ className, ...props }: NavBarProps) => {
 
   return (
     <Transmutation
-      initial={{
-        opacity: 0,
-        y: 6,
-      }}
+      transition={transitions.goDown}
       className={cn(
-        "sticky top-0 z-50 flex w-full items-center justify-between border-b border-gray-200 bg-zinc-50 px-4 py-0.5 backdrop-blur-sm dark:border-gray-700/20 dark:bg-zinc-900/20 laptop:hidden",
+        "sticky top-0 z-50 flex w-full items-center justify-between border-b border-gray-200 bg-zinc-50/40 px-4 py-0.5 backdrop-blur-md dark:border-gray-700/20 dark:bg-zinc-950/20 laptop:hidden",
         className,
         pathname.endsWith("curriculum") && "hidden",
       )}

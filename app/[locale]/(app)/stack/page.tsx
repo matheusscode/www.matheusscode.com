@@ -1,6 +1,7 @@
 import { RadialPurpleBlurCircle } from "@/packages/components/background-radials";
 import { Separator } from "@/packages/components/ui/separator";
 import { constructMetadata } from "@/packages/utils/construct-metadata";
+import transitions from "@/registry/registry-animations";
 import {
   registry_tech_stack,
   RegistryTechGroup,
@@ -33,30 +34,34 @@ export default async function Page({ params: { locale } }: Props) {
   return (
     <PageWrapper>
       <RadialPurpleBlurCircle />
-      <Transmutation>
-        <ContentWrapper className="flex flex-col gap-6">
+      <ContentWrapper className="flex flex-col gap-6">
+        <Transmutation transition={transitions.goDown}>
           <div>
             <Heading title={t("main_title")} />
             <Separator />
           </div>
-          {registry_tech_stack.map((group: RegistryTechGroup, index) => {
-            const translationKey = `group_${group.key}` as keyof IntlMessages;
+        </Transmutation>
+        {registry_tech_stack.map((group: RegistryTechGroup, index) => {
+          const translationKey = `group_${group.key}` as keyof IntlMessages;
 
-            return (
-              <nav
-                key={group.id}
-                data-index={index}
-                className="space-y-4 pt-8 data-[index=0]:pt-0"
-              >
-                <h1 className="mb-4 text-lg font-semibold">
-                  {t(translationKey as never)}
-                </h1>
-                <TechGroupList group={group} />
-              </nav>
-            );
-          })}
-        </ContentWrapper>
-      </Transmutation>
+          return (
+            <nav
+              key={group.id}
+              data-index={index}
+              className="space-y-4 pt-8 data-[index=0]:pt-0"
+            >
+              <Transmutation transition={transitions.slideToLeft}>
+                <Transmutation transition={transitions.reveal}>
+                  <h1 className="mb-4 text-lg font-semibold">
+                    {t(translationKey as never)}
+                  </h1>
+                </Transmutation>
+              </Transmutation>
+              <TechGroupList group={group} />
+            </nav>
+          );
+        })}
+      </ContentWrapper>
     </PageWrapper>
   );
 }

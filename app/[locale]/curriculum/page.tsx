@@ -1,8 +1,10 @@
 import { ExternalLink } from "@/packages/components/eternal-link";
 import { LanguageSwitcher } from "@/packages/components/language-switcher";
 import { constructMetadata } from "@/packages/utils/construct-metadata";
+import transitions from "@/registry/registry-animations";
 import enCv from "@/registry/registry-curriculum/registry-curriculum-en.json";
 import ptCv from "@/registry/registry-curriculum/registry-curriculum-pt.json";
+import { DownloadAction } from "@/ui/curriculum/donwload-action";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
@@ -35,9 +37,12 @@ export default function Page({ params: { locale } }: Props) {
   }
 
   return (
-    <PageWrapper className="relative mx-auto flex h-full w-full max-w-3xl flex-col gap-4 text-pretty !px-2 !py-0 text-sm print:h-auto print:max-w-4xl print:break-inside-avoid print:gap-2">
-      <Transmutation>
-        <LanguageSwitcher className="absolute left-0 right-0 top-0 print:hidden" />
+    <PageWrapper className="relative mx-auto flex h-full w-full max-w-3xl flex-col gap-4 text-pretty !px-2 !py-0 text-sm print:h-auto print:max-w-4xl print:break-inside-avoid print:gap-2 print:!text-primary">
+      <Transmutation transition={transitions.goDown}>
+        <div className="absolute left-0 right-0 top-0 flex items-center gap-2 print:hidden">
+          <LanguageSwitcher />
+          <DownloadAction />
+        </div>
         <ContentWrapper className="mt-10 h-auto max-w-full print:mt-0">
           <span className="block w-full text-right text-accent-foreground">
             {content.role}
@@ -54,16 +59,24 @@ export default function Page({ params: { locale } }: Props) {
               </span>
             </div>
           </div>
-          <div className="mt-2.5 flex w-full flex-col items-end justify-end gap-1.5 print:gap-1">
+          <div className="mt-2.5 flex w-full flex-col items-end justify-end gap-1.5 print:my-2.5 print:gap-1">
             <div className="flex flex-col items-end justify-end gap-0.5">
-              <ExternalLink href={content.links.github}>
+              <ExternalLink
+                href={content.links.github}
+                className="print:text-xs"
+              >
                 {content.links.github}
               </ExternalLink>
-              <ExternalLink href={content.links.linkedin}>
+              <ExternalLink
+                href={content.links.linkedin}
+                className="print:text-xs"
+              >
                 {content.links.linkedin}
               </ExternalLink>
             </div>
-            <span className="text-muted-foreground">{content.updated_at}</span>
+            <span className="text-muted-foreground print:text-xs">
+              {content.updated_at}
+            </span>
           </div>
           <p className="mb-0 mt-2 font-normal print:mt-1">{content.bio}</p>
         </ContentWrapper>
@@ -84,7 +97,7 @@ export default function Page({ params: { locale } }: Props) {
             ))}
           </ul>
         </ContentWrapper>
-        <ContentWrapper className="mt-4 h-auto max-w-full print:mt-0">
+        <ContentWrapper className="mt-6 h-auto max-w-full print:mt-0">
           <h1 className="my-0 text-xl print:text-lg">Experiences</h1>
           <ul className="ml-6 mt-2">
             {content.experiences.map((experience) => (

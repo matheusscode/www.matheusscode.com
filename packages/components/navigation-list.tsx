@@ -2,7 +2,9 @@
 
 import { usePathname } from "@/i18n/routing";
 import { DefLink } from "@/packages/components/def-link";
+import transitions from "@/registry/registry-animations";
 import { NavigateLink } from "@/registry/registry-navigation-routes";
+import Transmutation from "@/ui/layout/transmutation-content";
 import { cn } from "@/utils/cn";
 import { HTMLAttributes } from "react";
 import { Dot } from "./ui/dot";
@@ -11,6 +13,8 @@ interface NavigationListProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   hasCount?: boolean;
   links: NavigateLink[];
+  animationTime?: number;
+  onClick?: () => void;
 }
 
 export const NavigationList = ({
@@ -18,6 +22,8 @@ export const NavigationList = ({
   className,
   hasCount = false,
   links = [],
+  animationTime = 0.2,
+  onClick,
   ...props
 }: NavigationListProps) => {
   const pathname = usePathname();
@@ -25,20 +31,27 @@ export const NavigationList = ({
   return (
     <nav {...props} className={cn("flex flex-col gap-1", className)}>
       {title && (
-        <h1 className="flex items-center gap-1.5 text-[0.82rem] font-semibold p-2 text-gray-500 dark:text-gray-400/75">
-          <Dot />
-          {title}
-        </h1>
+        <Transmutation transition={transitions.slideToRight}>
+          <h1 className="flex items-center gap-1.5 p-2 text-[0.82rem] font-semibold text-gray-500 dark:text-gray-400/75">
+            <Dot />
+            {title}
+          </h1>
+        </Transmutation>
       )}
       <ul className="flex flex-col gap-1">
-        {links.map((link) => (
-          <li key={link.id} className="block">
-            <DefLink
-              isCount={hasCount}
-              params={link}
-              isActive={pathname.endsWith(link.path)}
-              disabled={link.disabled}
-            />
+        {links.map((link, index) => (
+          <li key={link.id} className="block" onClick={onClick}>
+            <Transmutation
+              transition={transitions.slideToRight}
+              time={index * animationTime}
+            >
+              <DefLink
+                isCount={hasCount}
+                params={link}
+                isActive={pathname.endsWith(link.path)}
+                disabled={link.disabled}
+              />
+            </Transmutation>
           </li>
         ))}
       </ul>

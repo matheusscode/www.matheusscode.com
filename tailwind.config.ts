@@ -77,5 +77,6 @@ const config: Config = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-};
+} satisfies Config;
+
 export default config;
