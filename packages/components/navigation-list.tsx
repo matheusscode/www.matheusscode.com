@@ -14,6 +14,7 @@ interface NavigationListProps extends HTMLAttributes<HTMLDivElement> {
   hasCount?: boolean;
   links: NavigateLink[];
   animationTime?: number;
+  onClick?: () => void;
 }
 
 export const NavigationList = ({
@@ -22,6 +23,7 @@ export const NavigationList = ({
   hasCount = false,
   links = [],
   animationTime = 0.2,
+  onClick,
   ...props
 }: NavigationListProps) => {
   const pathname = usePathname();
@@ -38,7 +40,7 @@ export const NavigationList = ({
       )}
       <ul className="flex flex-col gap-1">
         {links.map((link, index) => (
-          <li key={link.id} className="block">
+          <li key={link.id} className="block" onClick={onClick}>
             <Transmutation
               transition={transitions.slideToRight}
               time={index * animationTime}

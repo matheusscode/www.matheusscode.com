@@ -13,7 +13,7 @@ export const TechGroupList = ({ group }: TechGroupListProps) => {
   const t = useTranslations("stack");
 
   return (
-    <ul className="flex list-none flex-col gap-2 pl-8">
+    <ul className="flex list-none flex-col gap-2 pl-0 laptop:pl-8">
       {group.techs.map((tech, index) => (
         <li className="text-base" key={tech.name}>
           <Transmutation

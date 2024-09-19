@@ -85,7 +85,7 @@ export default async function Page({ params: { locale } }: Props) {
               <h2 className="font-sans text-lg font-medium tracking-tight">
                 Latest post
               </h2>
-              <div className="flex h-full w-full select-none items-center justify-center rounded-md border border-input bg-muted-foreground/15">
+              <div className="flex h-[144px] w-full select-none items-center justify-center rounded-md border border-input bg-muted-foreground/15">
                 <span className="text-primary/80">Coming soon...</span>
               </div>
             </div>
