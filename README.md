@@ -60,6 +60,8 @@
 - [**Shadcn UI**](https://ui.shadcn.dev/): A UI component library built on top of Radix UI and styled with Tailwind CSS, offering accessible and customizable components.
 - [**Notion**](https://www.notion.so/): An all-in-one workspace for note-taking, project management, and task tracking.
 - [**Magic UI**](https://magic.link/): A platform for implementing passwordless authentication using email and social logins.
+- [**Framer Motion**](https://www.framer.com/api/motion/): A popular library for adding animations and transitions to React applications, providing smooth and customizable animations.
+
 
 <br/>
 
