@@ -16,7 +16,7 @@
     "table_head_company": "Empresa",
     "table_head_period": "Periodo",
     "table_head_role": "Cargo",
-    "stack_description": "Tecnologias com quais tem mais familiaridade"
+    "stack_description": "Tecnologias com quais tenho mais familiaridade"
   },
   "journey": {
     "main_title": "Jornada"
@@ -125,6 +125,7 @@
     "label": "Enviar"
   },
   "globals": {
-    "loading": "Carregando..."
+    "loading": "Carregando...",
+    "donwload": "Baixar"
   }
 }

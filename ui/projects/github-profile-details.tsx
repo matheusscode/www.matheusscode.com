@@ -25,9 +25,7 @@ export const GithubProfileDetails = ({ user }: GithubProfileDetailsProps) => {
                 src={registry_myself.avatar_url || user?.avatar_url}
                 alt={registry_myself.username}
               />
-              <AvatarFallback>
-                {user?.name || registry_myself.full_name}
-              </AvatarFallback>
+              <AvatarFallback>MS</AvatarFallback>
             </Avatar>
           </Transmutation>
           <Dot className="absolute bottom-3 right-1" />

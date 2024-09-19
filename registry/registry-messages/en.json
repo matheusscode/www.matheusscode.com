@@ -125,6 +125,7 @@
     "label": "Send"
   },
   "globals": {
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "donwload": "Donwload"
   }
 }

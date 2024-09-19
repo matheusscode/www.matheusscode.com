@@ -4,6 +4,7 @@ import { constructMetadata } from "@/packages/utils/construct-metadata";
 import transitions from "@/registry/registry-animations";
 import enCv from "@/registry/registry-curriculum/registry-curriculum-en.json";
 import ptCv from "@/registry/registry-curriculum/registry-curriculum-pt.json";
+import { DownloadAction } from "@/ui/curriculum/donwload-action";
 import { ContentWrapper } from "@/ui/layout/content-wrapper";
 import { Heading } from "@/ui/layout/heading";
 import { PageWrapper } from "@/ui/layout/page-wrapper";
@@ -36,9 +37,12 @@ export default function Page({ params: { locale } }: Props) {
   }
 
   return (
-    <PageWrapper className="relative mx-auto flex h-full w-full max-w-3xl flex-col gap-4 text-pretty !px-2 !py-0 text-sm print:h-auto print:max-w-4xl print:break-inside-avoid print:gap-2">
+    <PageWrapper className="relative mx-auto flex h-full w-full max-w-3xl flex-col gap-4 text-pretty !px-2 !py-0 text-sm print:h-auto print:max-w-4xl print:break-inside-avoid print:gap-2 print:!text-primary">
       <Transmutation transition={transitions.goDown}>
-        <LanguageSwitcher className="absolute left-0 right-0 top-0 print:hidden" />
+        <div className="absolute left-0 right-0 top-0 flex items-center gap-2 print:hidden">
+          <LanguageSwitcher />
+          <DownloadAction />
+        </div>
         <ContentWrapper className="mt-10 h-auto max-w-full print:mt-0">
           <span className="block w-full text-right text-accent-foreground">
             {content.role}
@@ -93,7 +97,7 @@ export default function Page({ params: { locale } }: Props) {
             ))}
           </ul>
         </ContentWrapper>
-        <ContentWrapper className="mt-4 h-auto max-w-full print:mt-0">
+        <ContentWrapper className="mt-6 h-auto max-w-full print:mt-0">
           <h1 className="my-0 text-xl print:text-lg">Experiences</h1>
           <ul className="ml-6 mt-2">
             {content.experiences.map((experience) => (

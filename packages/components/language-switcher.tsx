@@ -59,7 +59,7 @@ export function LanguageSwitcher({
           {children || (currentLocale === "en" ? "🇧🇷" : "🇺🇸")}
         </Button>
       </TooltipTrigger>
-      <TooltipContent align="center" side="right">
+      <TooltipContent align="center" side="bottom">
         {currentLocale === "en" ? "Mudar para português" : "Change to english"}
       </TooltipContent>
     </Tooltip>
