@@ -58,6 +58,8 @@
 - [**TypeScript**](https://www.typescriptlang.org/): A strongly typed superset of JavaScript that enhances the development experience with type safety, catching errors early.
 - [**Tailwind CSS**](https://tailwindcss.com/): A utility-first CSS framework for building custom designs quickly and efficiently without leaving your HTML.
 - [**Shadcn UI**](https://ui.shadcn.dev/): A UI component library built on top of Radix UI and styled with Tailwind CSS, offering accessible and customizable components.
+- [**Notion**](https://www.notion.so/): An all-in-one workspace for note-taking, project management, and task tracking.
+- [**Magic UI**](https://magic.link/): A platform for implementing passwordless authentication using email and social logins.
 
 <br/>
 
